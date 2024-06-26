@@ -2,13 +2,42 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+
+@font-face {
+  font-family: "pixel";
+  src: url("./assets/Fonts/PixelOperator.woff2") format("woff2"),
+    url("./assets/Fonts/PixelOperator.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "freepixel";
+  src: url("./assets/Fonts/FreePixel-Regular.woff2") format("woff2"),
+    url("./assets/Fonts/FreePixel-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "pixelbold";
+  src: url("./assets/Fonts/PixelOperator-Bold.woff2") format("woff2"),
+    url("./assets/Fonts/PixelOperator-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Sarabun", sans-serif;
+  font-family: "Pixelify Sans", sans-serif;
+  /*
+  font-family: "VT323", monospace;
+  */
   background-color: black;
 }
 
@@ -24,7 +53,7 @@ p {
 
 a,
 .btn {
-  transition: all 300ms ease;
+  transition: all 00ms ease;
 }
 
 /* DESKTOP NAV*/
@@ -53,10 +82,10 @@ a {
 }
 
 a:hover {
-  color: grey;
+  color: #417dd6;
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-decoration-color: #417dd6;
 }
 
 .logo {
@@ -72,13 +101,11 @@ a:hover {
 
 #hamburger-nav {
   display: none;
-  
 }
 
 .hamburger-menu {
   position: relative;
   display: inline-block;
- 
 }
 
 .hamburger-icon {
@@ -172,7 +199,7 @@ section {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  height: 80vh;
+  height: 70vh;
 }
 
 .section_pic_container {
@@ -180,6 +207,29 @@ section {
   height: 400px;
   width: 400px;
   margin: auto 0;
+}
+
+/* Effect with profile*/
+
+.profile_pic_container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+.profile_pic_container:hover {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+  cursor: pointer;
+}
+
+.sprite_profile {
+  width: 100%; /* Scales the image to fill the container */
+  height: 100%; /* Scales the image to fill the container */
+  image-rendering: pixelated; /* Ensures the image is scaled without blurring */
 }
 
 .section_text {
@@ -201,9 +251,20 @@ section {
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 5rem;
+  font-weight: 400;
   text-align: center;
-  color: rgb(255, 255, 255)
+  padding-bottom: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+.bio {
+  font-size: 2rem;
+  font-weight: 100;
+  text-align: center;
+  padding-bottom: 2rem;
+  color: rgb(184, 184, 184);
+  font-family: "pixelbold", sans-serif;
 }
 
 #socials-container {
@@ -226,19 +287,25 @@ section {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: auto;
+  align-self: flex-end;
 }
 
 .btn {
-  font-weight: 600;
-  transition: all 300ms ease;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  transition: all 00ms ease;
   padding: 1rem;
-  width: 8rem;
-  border-radius: 1rem;
+  width: 12rem;
+
+  border-radius: 0rem;
 }
 
 .btn-color-1,
 .btn-color-2 {
-  border: rgb(255, 255, 255) 0.1rem solid;
+  border: rgb(255, 255, 255) 0.2rem solid;
+
   color: white;
   background: rgb(0, 0, 0);
 }
@@ -246,40 +313,98 @@ section {
 .btn-color-1:hover,
 .btn-color-2:hover {
   cursor: pointer;
-  background: rgb(56, 56, 56);
-  color: rgb(255, 255, 255);
+  background: #417dd6;
+  color: rgb(0, 0, 0);
 }
 
 .btn-color-1,
 .btn-color-2:hover {
-
 }
 
 .btn-color-1:hover {
-  
 }
 
 .btn-color-2 {
- 
+  margin-right: 1rem;
 }
 
 .btn-color-2:hover {
-  
 }
 
 .btn-container {
+  margin-top: 1rem;
   gap: 1rem;
+  align-self: flex-end;
 }
 /* ABOUT SECTION */
 
 #about {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 70vh;
+}
+
+#about a:hover {
+  text-decoration: none;
+}
+
+.about_pic_container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+  overflow: hidden;
+  min-width: 20vw;
+}
+
+.about_pic_container:hover {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+  cursor: pointer;
+  opacity: 90%;
+}
+
+.sprite_about {
+  width: 100%; /* Scales the image to fill the container */
+  height: 100%; /* Scales the image to fill the container */
+  image-rendering: pixelated; /* Ensures the image is scaled without blurring */
+  object-fit: cover;
+}
+
+.about_section_text {
+  align-self: center;
+  text-align: left;
+}
+
+.about_section_paragraph {
+  align-self: center;
+  text-align: left;
+  color: rgb(187, 187, 187);
+  font-size: 2rem;
+  padding-left: 10vh;
+  padding-right: 0vw;
+  padding-bottom: 2vh;
+  font-family: "pixel", sans-serif;
+}
+
+.about_section_paragraph a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.about_section_paragraph a:hover {
+  color: #417dd6;
+  text-decoration: none;
 }
 
 .about-containers {
   gap: 2rem;
   margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: 0rem;
+  justify-content: center;
 }
 
 .about-details-container {
@@ -306,10 +431,83 @@ section {
   padding: 1.5rem;
   flex: 1;
   background: white;
-  border-radius: 2rem;
+  border-radius: 0rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
+}
+
+/* FOR EXPERIENCE */
+
+.experience-container {
+  padding: 1.5rem;
+  flex: 1;
+  background: white;
+  border-radius: 0rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+
+  display: flex;
+}
+
+.experience-btn {
+  margin-left: 1rem;
+  color: rgb(255, 255, 255);
+  border-color: rgb(163, 163, 163);
+  justify-content: left;
+}
+
+.experience-align {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-media {
+  display: flex;
+  flex-direction: row;
+}
+
+.experience-container:hover {
+}
+
+.experience-img {
+  border-radius: 0rem;
+  width: 20vh;
+  height: 20vh;
+  flex: 1;
+  padding: 10px;
+  border: rgb(122, 122, 122) 0.2rem solid;
+}
+
+.experience-title {
+  display: flex;
+}
+
+.experience-date {
+  color: rgb(153, 153, 153);
+  font-family: "pixel", sans-serif;
+  flex: 1; /* This makes each item take up an equal amount of space */
+  margin: 1rem;
+  margin-top: 0rem;
+  text-align: left;
+}
+
+.experience-description {
+  flex: 1;
+}
+
+.experience-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* This makes each item take up an equal amount of space */
+  padding: 10px;
+  text-align: left;
+}
+
+.experience-text p {
+  margin-left: 1rem;
+  font-family: "pixel", sans-serif;
+  font-size: 1.5rem;
 }
 
 .section-container {
@@ -323,32 +521,89 @@ section {
   margin: auto 0;
 }
 
+#experience {
+  height: 70vh;
+}
+
+/* CHARACTER */
+
+.container {
+  
+  height: 10vh;
+  width: 80vw;
+  background-color: #dcdcdc00;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #000;
+}
+
+.character {
+  width: 72px;
+  height: 64px;
+  background-image: url(./assets/media/peckii_still.gif); /* Replace with your idle animation GIF */
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  image-rendering: pixelated;
+  transform: translateX(-50%);
+
+}
+
 /* PROJECTS */
 
 #projects {
   position: relative;
+  align-items: center;
+
+  height: 100vh;
 }
 
 .color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
+  border: rgb(172, 172, 172) 0.2rem solid;
+  background: rgb(0, 0, 0);
 }
 
 .project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  border-radius: 0rem;
+  width: 30vh;
+  height: 30vh;
 }
 
 .project-title {
-  margin: 1rem;
-  color: white;
+  margin-left: 1rem;
+  color: rgb(255, 255, 255);
+  font-family: "pixel", sans-serif;
+  font-size: 3rem;
 }
 
 .project-btn {
+  margin-left: 1rem;
   color: rgb(255, 255, 255);
   border-color: rgb(163, 163, 163);
 }
+
+/*  ART */
+
+.art-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#art{
+  
+  height: 60vh;
+}
+
+.art-img {
+  border-radius: 0rem;
+  margin:2rem;
+  height: 30vh;
+  border: rgb(172, 172, 172) 0.2rem solid;
+}
+
 
 /* CONTACT */
 
@@ -356,14 +611,14 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  height: 40vh;
 }
 
 .contact-info-upper-container {
   display: flex;
   justify-content: center;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
+  border-radius: 0rem;
+  border: rgb(53, 53, 53) 0.2rem solid;
   border-color: rgb(163, 163, 163);
   background: (250, 250, 250);
   margin: 2rem auto;
@@ -400,4 +655,81 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+.page {
+  font-family: "Sarabun", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 25vw;
+  margin-right: 25vw;
+}
+
+.page-title {
+  color: white;
+  margin: 2rem;
+  font-size: 4rem;
+  font-family: "pixelbold", sans-serif;
+}
+.page-subtitle {
+  color: rgb(218, 218, 218);
+  margin: 2rem;
+  font-size: 3rem;
+  font-family: "pixelbold", sans-serif;
+}
+
+.page-text {
+  font-family: "Sarabun", sans-serif;
+  font-size: 1.5rem;
+  color: rgb(175, 175, 175);
+  margin: 2rem;
+  max-width: 50vw;
+  margin-top: 2rem;
+}
+
+.page-text a {
+  color: rgb(255, 255, 255);
+}
+
+.page-text a:hover {
+  color: #417dd6;
+
+  text-decoration: none;
+}
+
+.page-text-bold {
+  font-family: "Sarabun", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(211, 211, 211);
+  margin: 2rem;
+  max-width: 50vw;
+}
+
+.page-image {
+  max-height: 50vh;
+  margin: 2rem;
+  max-width: 100%;
+  
+  border: rgb(122, 122, 122) 0.2rem solid;
+}
+.page-image-marketing {
+  max-height: 50vh;
+  margin: 0.5rem;
+  max-width: 100%;
+}
+
+.page-image-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.page-image-below {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

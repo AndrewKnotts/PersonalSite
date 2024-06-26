@@ -15,7 +15,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#artwork">Artwork</a></li>
         </ul>
       </div>
     </nav>
@@ -31,18 +31,24 @@
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
           <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li><a href="#artwork" onclick="toggleMenu()">Artwork</a></li>
         </div>
       </div>
     </nav>
     <section id="profile">
-      <div class="section_pic_container">
-        <img src="./assets/profile-pic.png" alt="John Doe profile pic" />
+      <div class="profile_pic_container" id="profile_pic_container">
+        <img
+          src="./assets/AnimatedGraphics/Profile_sprite_default2.gif"
+          alt="profile gif"
+          class="sprite_profile"
+          id="profile_image"
+        />
       </div>
       <div class="section_text">
-        <p class="section_text_p1">Hello I'm</p>
         <h1 class="title">Andrew Knotts</h1>
-        <p class="section_text_p2">Frontend Developer</p>
+        <p class="bio">
+          I utilize technologies to craft unique, satisfying experiences.
+        </p>
         <div class="btn_container">
           <button
             class="btn btn-color-2"
@@ -70,258 +76,407 @@
         </div>
       </div>
     </section>
+
     <section id="about">
-      <p class="section_text_p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section_pic_container">
-          <img
-            src="./assets/profile-pic-2.png"
-            alt="Profile Picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>2+ years <br />Frontend Development</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.A. Bachelors Degree <br />M.S. Degree</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-              necessitatibus? Libero eligendi doloribus officia incidunt,
-              consequuntur repellendus laboriosam illum deleniti quam omnis
-            </p>
-          </div>
-        </div>
+      <div class="about_section_text">
+        <h1 class="title">About Me</h1>
+        <p class="about_section_paragraph">
+          Back at university, I explored the intersection of computer science
+          and art, crafting everything from intricate
+          <a href="centible.html">app designs</a> to charming
+          <a href="azuresense.html">video game experiences</a>. Along the way, I
+          interned for a <a href="https://www.uthrive.club/">startup</a>, played
+          a key role in launching a new
+          <a href="https://centible.app/">budgeting app</a>, and even immersed
+          myself in design during a semester in
+          <a href="https://en.snu.ac.kr/">Seoul</a>. Now as a recent graduate,
+          I'm eager to apply my skills in design and software engineering.
+        </p>
+        <p class="about_section_paragraph">
+          As an artist, I strive to construct experiences that are not only
+          functional but also aesthetically pleasing. My background in
+          <a href="https://www.instagram.com/andrewknottsart/">painting</a>
+          informs my approach, as I aim to make every project a blend of beauty
+          and usability.
+        </p>
+        <p class="about_section_paragraph">
+          Outside of programming and design, you can find me with a paintbrush
+          in hand, exploring the
+          <a href="https://eldenring.fandom.com/wiki/Lands_Between"
+            >Lands Between</a
+          >, or hiking up a new trail.
+        </p>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
+      <div class="about_pic_container" id="about_pic_container">
+        <img
+          src="./assets/AnimatedGraphics/computerguy_default.gif"
+          alt="about gif"
+          class="sprite_about"
+          id="about_image"
+        />
+      </div>
     </section>
+
     <section id="experience">
-      <p class="section_text_p1">Explore My</p>
       <h1 class="title">Experience</h1>
       <div class="experience-details-container">
-        <div class="about-container">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="projects">
-      <p class="section_text_p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
         <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https:github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https:github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https:github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https:github.com/'"
-              >
-                Live Demo
-              </button>
+          <div class="experience-container color-container">
+            <div class="experience-media">
+              <div class="article-container">
+                <img
+                  src="./assets/media/thumbnail_centible 2.jpg"
+                  alt="centible"
+                  class="experience-img"
+                />
+              </div>
+
+              <div class="experience-text">
+                <div class="experience-title">
+                  <h2 class="experience-sub-title project-title">Cenitble</h2>
+                  <h2 class="experience-date">2022-2024</h2>
+                </div>
+
+                <p class="experience-description">
+                  Collaborated with a startup team to develop and launch a
+                  budgeting app called “Centible”. Developed with Swift and
+                  Figma to design and develop frontend. Produced animations and
+                  marketing materials.
+                </p>
+
+                <div class="btn-container">
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='centible.html'"
+                  >
+                    Learn More
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https:github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https:github.com/'"
-              >
-                Live Demo
-              </button>
+
+          <div class="experience-container color-container">
+            <div class="experience-media">
+              <div class="article-container">
+                <img
+                  src="./assets/media/Uthrive_cover.png"
+                  alt="uthrive"
+                  class="experience-img"
+                />
+              </div>
+
+              <div class="experience-text">
+                <div class="experience-title">
+                  <h2 class="experience-sub-title project-title">Uthrive</h2>
+                  <h2 class="experience-date">Summer 2022</h2>
+                </div>
+
+                <p class="experience-description">
+                  Uthrive is a startup app used for identifying the best credit
+                  card to use for purchases. Interned as a UI/UX designer.
+                  Crafted interactive designs for the Uthrive app, started
+                  development for Uthrive web extension, and designed marketing
+                  materials.
+                </p>
+
+                <div class="btn-container">
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='uthrive.html'"
+                  >
+                    Learn More
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
+
     </section>
+
+    <section id="projects">
+          <h1 class="title">Projects</h1>
+         
+          
+                  <div class="container">
+                    <div class="character" id="character"></div>
+                    <!-- <img src="./assets/media/peckii_still.gif" alt="" class="character" id="character"> -->
+                  </div>
+
+            <div class="about-containers">
+              <div
+                class="experience-container color-container"
+                id="azuresense-card"
+              >
+                <div class="experience-media">
+                  <div class="article-container">
+                    <img
+                      src="./assets/media/azuresense_1.png"
+                      alt="uthrive"
+                      class="experience-img"
+                    />
+                  </div>
+
+                  <div class="experience-text">
+                    <div class="experience-title">
+                      <h2 class="experience-sub-title project-title">
+                        Azure Sense
+                      </h2>
+                      <h2 class="experience-date">2024</h2>
+                    </div>
+
+                    <p class="experience-description">
+                      A dialogue-driven, quirky puzzle game I built from the
+                      ground up by myself in Gamemaker Studio 2.
+                    </p>
+
+                    <div class="btn-container">
+                      <button
+                        class="btn btn-color-2 project-btn"
+                        onclick="location.href='azuresense.html'"
+                      >
+                        Learn More
+                      </button>
+                      <button
+                        class="btn btn-color-2 project-btn"
+                        onclick="location.href='https://fushpuppy.itch.io/azure-sense'"
+                      >
+                        Live Demo
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="experience-container color-container"
+                id="azuresense-card"
+              >
+                <div class="experience-media">
+                  <div class="article-container">
+                    <img
+                      src="./assets/media/virtualgallery1.png"
+                      alt="uthrive"
+                      class="experience-img"
+                    />
+                  </div>
+                  <div class="experience-text">
+                    <div class="experience-title">
+                      <h2 class="experience-sub-title project-title">
+                        Virtual Gallery
+                      </h2>
+                      <h2 class="experience-date">2023</h2>
+                    </div>
+                    <p>
+                      One of the projects I worked on in Seoul. A simple little
+                      room to view your artwork in a gallery setting.
+                    </p>
+
+                    <div class="btn-container">
+                      <button
+                        class="btn btn-color-2 project-btn"
+                        onclick="location.href='https://github.com/AndrewKnotts/UIDesignProject2'"
+                      >
+                        Github
+                      </button>
+                      <button
+                        class="btn btn-color-2 project-btn"
+                        onclick="location.href='https://andrewknotts.github.io/UIDesignProject2/'"
+                      >
+                        Live Demo
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-containers">
+              <div
+                class="experience-container color-container"
+                id="azuresense-card"
+              >
+                <div class="experience-media">
+                  <div class="article-container">
+                    <img
+                      src="./assets/media/PS_ModelsofLanguage.png"
+                      alt="uthrive"
+                      class="experience-img"
+                    />
+                  </div>
+
+                  <div class="experience-text">
+                    <div class="experience-title">
+                      <h2 class="experience-sub-title project-title">
+                        MoC Simulator
+                      </h2>
+                      <h2 class="experience-date">2022</h2>
+                    </div>
+
+                    <p class="experience-description">
+                      I was part of a team of 4 tasked with building a simulator for models of computation to assist with the models of computation course at UNC Chapel Hill. 
+                    </p>
+
+                    <div class="btn-container">
+                      <button
+                        class="btn btn-color-2 project-btn"
+                        onclick="location.href='https://github.com/psduggirala/ModelsOfCompSimulator'"
+                      >
+                        Github
+                      </button>
+                      <button
+                        class="btn btn-color-2 project-btn"
+                        onclick="location.href='https://psduggirala.github.io/ModelsOfCompSimulator/'"
+                      >
+                        Live Demo
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="experience-container color-container"
+                id="azuresense-card"
+              >
+                <div class="experience-media">
+                  <div class="article-container">
+                    <img
+                      src="./assets/media/robotcover.jpg"
+                      alt="uthrive"
+                      class="experience-img"
+                    />
+                  </div>
+                  <div class="experience-text">
+                    <div class="experience-title">
+                      <h2 class="experience-sub-title project-title">
+                        3D Robot 
+                      </h2>
+                      <h2 class="experience-date">2022</h2>
+                    </div>
+                    <p>
+                      I modeled, animated, and textured my own character in Maya. You can use the QR code to use the character in augmented reality as a filter on instagram.
+                    </p>
+
+                    <div class="btn-container">
+                      <button
+                        class="btn btn-color-2 project-btn"
+                        onclick="location.href='robot.html'"
+                      >
+                        Learn More
+                      </button>
+                      <button
+                        class="btn btn-color-2 project-btn"
+                        onclick="location.href='robotqr.html'"
+                      >
+                        QR Code
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </section>
+
+    <section id="artwork">
+          <h1 class="title">Artwork</h1>
+          <div class="experience-details-container">
+            <div class="about-containers">
+              
+              
+              <div class="details-container color-container">
+                <div class="art-container">
+                  <img
+                    src="./assets/media/PS_hands1.jpg"
+                    alt="Project 3"
+                    class="art-img"
+                  />
+                  <img
+                    src="./assets/media/PS_Delaney.jpg"
+                    alt="Project 3"
+                    class="art-img"
+                  />
+                  <img
+                    src="./assets/media/PS_zach.jpg"
+                    alt="Project 3"
+                    class="art-img"
+                  />
+                  <img
+                    src="./assets/media/PS_olivia.jpg"
+                    alt="Project 3"
+                    class="art-img"
+                  />
+                  <img
+                  src="./assets/media/PS_dogsbeach.jpg"
+                  alt="Project 3"
+                  class="art-img"
+                />
+                </div>
+                <h2 class="experience-sub-title project-title">
+                  Check out my art!
+                </h2>
+                <div class="btn-container">
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://www.instagram.com/andrewknottsart/'"
+                  >
+                    Instagram
+                  </button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            src="./assets/arrow.png"
+            alt="Arrow icon"
+            class="icon arrow"
+            onclick="location.href='./#contact'"
+          />
+    </section>
+
     <section id="contact">
-      <p class="section_text_p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email_white.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p>
-            <a href="mailto:knottsan2010@gmail.com">knottsan2010@gmail.com</a>
-          </p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin_white.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p>
-            <a href="https://linkedin.com/in/knottsandrew/">LinkedIn</a>
-          </p>
-        </div>
-      </div>
+          <h1 class="title">Contact Me</h1>
+          <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+              <img
+                src="./assets/email_white.png"
+                alt="Email icon"
+                class="icon contact-icon email-icon"
+              />
+              <p>
+                <a href="mailto:knottsan2010@gmail.com"
+                  >knottsan2010@gmail.com</a
+                >
+              </p>
+            </div>
+            <div class="contact-info-container">
+              <img
+                src="./assets/linkedin_white.png"
+                alt="LinkedIn icon"
+                class="icon contact-icon"
+              />
+              <p>
+                <a href="https://linkedin.com/in/knottsandrew/">LinkedIn</a>
+              </p>
+            </div>
+          </div>
     </section>
     <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2024 Andrew Knotts. All Rights Reserved</p>
+          <nav>
+            <div class="nav-links-container">
+              <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#artwork">Artwork</a></li>
+              </ul>
+            </div>
+          </nav>
+          <p>Copyright &#169; 2024 Andrew Knotts. All Rights Reserved</p>
     </footer>
     <script src="script.js"></script>
+    </div>
   </body>
 </html>
