@@ -47,6 +47,12 @@
   #about{
     height: 80vh;
   } 
+
+  .experience-text p {
+    margin-left: 1rem;
+    font-family: "pixel", sans-serif;
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 1600px) {
@@ -82,6 +88,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .experience-text p {
+    margin-left: 1rem;
+    font-family: "pixel", sans-serif;
+    font-size: 1.5rem;
   }
 }
 

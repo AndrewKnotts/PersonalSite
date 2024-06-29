@@ -511,7 +511,8 @@ section {
 .experience-text p {
   margin-left: 1rem;
   font-family: "pixel", sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  padding-bottom: 1rem;
 }
 
 .section-container {
@@ -532,7 +533,6 @@ section {
 /* CHARACTER */
 
 .container {
-  
   height: 10vh;
   width: 80vw;
   background-color: #dcdcdc00;
@@ -551,7 +551,6 @@ section {
   left: 25%;
   image-rendering: pixelated;
   transform: translateX(-50%);
-
 }
 
 /* PROJECTS */
@@ -599,12 +598,10 @@ section {
 }
 
 .artwork-box {
-  
   padding: 1.5rem;
   border: rgb(139, 139, 139) 0.2rem solid;
   text-align: center;
   align-items: center;
-  
 }
 
 .art-container {
@@ -613,21 +610,22 @@ section {
   align-items: center;
   justify-content: center;
   width: auto;
-
 }
-
 
 .art-img {
   max-width: 10vw;
   border-radius: 0rem;
-  margin:1vw;
-  
-  
-  
+  margin: 1vw;
 
   border: rgb(172, 172, 172) 0.2rem solid;
 }
 
+.art-text {
+  font-size: 2rem;
+  font-family: "pixel", sans-serif;
+  color: rgb(194, 194, 194);
+  margin: 1rem;
+}
 
 /* CONTACT */
 
@@ -733,11 +731,10 @@ footer p {
 }
 
 .page-image {
-  
   margin: 2rem;
   max-width: 100%;
   max-height: 50vh;
-  
+
   border: rgb(122, 122, 122) 0.2rem solid;
   object-fit: contain;
 }
