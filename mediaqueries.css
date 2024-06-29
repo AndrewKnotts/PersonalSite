@@ -6,6 +6,83 @@
   .about-containers {
     flex-wrap: wrap;
   }
+
+  .about_section_paragraph {
+    font-size: 1.8rem;
+  }
+
+  #experience{
+    height: 100vh;
+  } 
+
+  #projects{
+    height: 170vh;
+  } 
+  #about{
+    height: 200vh;
+  } 
+
+}
+
+@media screen and (max-width: 1900px) {
+  #profile {
+    height: 83vh;
+    margin-bottom: rem;
+  }
+  .about-containers {
+    flex-wrap: wrap;
+  }
+
+  .about_section_paragraph {
+    font-size: 1.7rem;
+  }
+
+  #experience{
+    height: 80vh;
+  } 
+
+  #projects{
+    height: 180vh;
+  } 
+  #about{
+    height: 80vh;
+  } 
+}
+
+@media screen and (max-width: 1600px) {
+  #profile {
+    height: 83vh;
+    margin-bottom: rem;
+  }
+  .about-containers {
+    flex-wrap: wrap;
+  }
+
+  .about_section_paragraph {
+    font-size: 1.7rem;
+  }
+
+  #experience{
+    height: 100vh;
+  } 
+
+  #projects{
+    height: 200vh;
+  } 
+  #about{
+    height: 80vh;
+  } 
+
+  .page-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .page-image-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -22,10 +99,23 @@
   #profile,
   .section-container {
     display: block;
+    
   }
 
   .arrow {
     display: none;
+  }
+
+  #about {
+    height: 100vh;
+  }
+
+  .about_section_paragraph {
+    font-size: 1.5rem;
+  }
+
+  #experience {
+    height: 100vh;
   }
 
   section,
@@ -49,15 +139,30 @@
 }
 
 @media screen and (max-width: 600px) {
+
+
   #contact,
   footer {
     height: 40vh;
   }
 
   #profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 83vh;
     margin-bottom: 0;
+   
   }
+
+  .profile_pic_container {
+    width: 50vw;
+  }
+  .profile_pic_container:hover {
+    width: 50vw;
+  }
+
+ 
 
   article {
     font-size: 1rem;
@@ -130,8 +235,12 @@
     display: flex;
     justify-content: center;
     gap: 5rem;
-    height: 70vh;
+    height: 110vh;
     display: block;
+  }
+
+  .about_section_paragraph {
+    font-size: 1.3rem;
   }
 
   .about_pic_container {
@@ -154,12 +263,117 @@
   }
 
   #experience {
-    height: 130vh;
+    height: 170vh;
     
   }
 
+  .experience-sub-title {
+    font-size: 2rem;
+  }
+
+  .experience-media {
+    display: flex;
+    flex-direction: column;
+  }
+
   #projects {
-    height: 220vh;
+    height: 320vh;
+  }
+
+  #artwork,
+  .details-container {
+    
+    flex: 1;
+   
+    border-radius: 0rem;
+   
+    
+    text-align: center;
+  } 
+
+  #artwork {
+    height: 50vh;
+  }
+
+  .experience-media {
+    align-items: center;
+  }
+
+  .page {
+    font-family: "Sarabun", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+  
+  .page-title {
+    color: white;
+    margin: 1rem;
+    font-size: 2rem;
+    font-family: "pixelbold", sans-serif;
+  }
+  .page-subtitle {
+    color: rgb(218, 218, 218);
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-family: "pixelbold", sans-serif;
+  }
+  
+  .page-text {
+    font-family: "Sarabun", sans-serif;
+    font-size: 1rem;
+    color: rgb(175, 175, 175);
+    margin: 2rem;
+    
+    margin-top: 2rem;
+  }
+  
+  .page-text a {
+    color: rgb(255, 255, 255);
+  }
+  
+  .page-text a:hover {
+    color: #417dd6;
+  
+    text-decoration: none;
+  }
+  
+  .page-text-bold {
+    font-family: "Sarabun", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(211, 211, 211);
+    margin: 1rem;
+    max-width: 50vw;
+  }
+  
+  .page-image {
+    max-height: auto;
+    margin: 2rem;
+    max-width: 100%;
+    
+    border: rgb(122, 122, 122) 0.2rem solid;
+  }
+  .page-image-marketing {
+    max-height: 50vh;
+    margin: 0.5rem;
+    max-width: 100%;
+  }
+  
+  .page-image-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .page-image-below {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
 

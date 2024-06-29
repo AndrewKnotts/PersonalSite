@@ -215,6 +215,8 @@ section {
   display: flex;
   height: 400px;
   width: 400px;
+  height: auto;
+  max-width: 100%;
   margin: auto 0;
 }
 
@@ -224,6 +226,8 @@ section {
   width: 400px;
   margin: auto 0;
   cursor: pointer;
+  height: auto;
+  max-width: 100%;
 }
 
 .sprite_profile {
@@ -356,6 +360,8 @@ section {
   margin: auto 0;
   overflow: hidden;
   min-width: 20vw;
+  max-width: 100%;
+  height: auto;
 }
 
 .about_pic_container:hover {
@@ -365,6 +371,9 @@ section {
   margin: auto 0;
   cursor: pointer;
   opacity: 90%;
+  min-width: 20vw;
+  max-width: 100%;
+  height: auto;
 }
 
 .sprite_about {
@@ -522,7 +531,7 @@ section {
 }
 
 #experience {
-  height: 70vh;
+  height: 60vh;
 }
 
 /* CHARACTER */
@@ -585,22 +594,42 @@ section {
 
 /*  ART */
 
+#artwork {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.artwork-box {
+  
+  padding: 1.5rem;
+  border: rgb(139, 139, 139) 0.2rem solid;
+  text-align: center;
+  align-items: center;
+  
+}
+
 .art-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: auto;
+
 }
 
-#art{
-  
-  height: 60vh;
-}
 
 .art-img {
+  max-width: 10vw;
   border-radius: 0rem;
-  margin:2rem;
-  height: 30vh;
+  margin:1vw;
+  
+  
+  
+
   border: rgb(172, 172, 172) 0.2rem solid;
 }
 
@@ -709,11 +738,13 @@ footer p {
 }
 
 .page-image {
-  max-height: 50vh;
+  
   margin: 2rem;
   max-width: 100%;
+  max-height: 50vh;
   
   border: rgb(122, 122, 122) 0.2rem solid;
+  object-fit: contain;
 }
 .page-image-marketing {
   max-height: 50vh;
@@ -723,7 +754,7 @@ footer p {
 
 .page-image-row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 
