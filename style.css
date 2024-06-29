@@ -335,11 +335,6 @@ section {
 .btn-color-2:hover {
 }
 
-.btn-container {
-  margin-top: 1rem;
-  gap: 1rem;
-  align-self: flex-end;
-}
 /* ABOUT SECTION */
 
 #about {
