@@ -1,0 +1,130 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+  font-family: "Arial", sans-serif;
+}
+
+/*////////////////*/
+/* Header layout */
+/*////////////////*/
+
+/* Header layout */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #111;
+  border-bottom: 1px solid #222;
+  position: relative;
+  z-index: 10;
+}
+
+/* Header sections */
+.header-left {
+}
+
+.header-nav {
+  display: flex;
+  gap: 40px;
+}
+
+.header-nav a,
+.header-right a {
+  position: relative;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline effect */
+.header-nav a::after,
+.header-right a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.header-nav a:hover,
+.header-right a:hover {
+  color: #fff;
+}
+
+.header-nav a:hover::after,
+.header-right a:hover::after {
+  width: 100%;
+}
+
+/* Right section */
+.header-right {
+  font-size: 1rem;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+
+
+
+/*////////////////*/
+/* Line Overlay */
+/*////////////////*/
+
+.line-overlay {
+position: fixed;
+width: calc(100% - 2rem);
+height: 100%;
+top: 0;
+left: 0;
+border-left: .5px solid white;
+border-right: .5px solid white;
+margin: 0rem 1rem;
+display: flex;
+opacity: .1;
+z-index: 0;
+}
+
+.line-overlay-section {
+    width: 25%;
+    border-left: .5px solid white;
+    border-right: .5px solid white;
+}
+
