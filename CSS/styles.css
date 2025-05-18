@@ -3,5 +3,26 @@
     --white: #ffffff;
   
   }
+
+  /*////////////////*/
+/* Button Styles */
+/*////////////////*/
+
+
   
+  .styled-button{
+    font-size: 16px;
+    padding: 1.5rem 4rem;
+    border: 1px solid white;
+    width: min-content;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+  }
   
+  .styled-button:hover{
+    color: black;
+    background-color: white;
+  }

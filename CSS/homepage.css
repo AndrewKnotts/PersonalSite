@@ -8,7 +8,11 @@
 body {
   background: var(--black);
   color: #fff;
-  font-family: "Arial", sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
+}
+
+.section-dark{
+  background-color: var(--black);
 }
 
 
@@ -17,22 +21,15 @@ body {
 /*////////////////*/
 
 .main-content{
-  margin: 0rem 1rem;
+  padding: 0rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+  background-color: var(--black);
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  overflow: hidden;
 
-/*////////////////*/
-/* Name */
-/*////////////////*/
-
-
-.home-big-name {
-  font-size: 17vw;
-  font-weight: 700;
-  padding-top: 1rem;
-  max-width: 1440px;
 }
 
 /*////////////////*/
@@ -177,15 +174,60 @@ border-right: .5px solid white;
 margin: 0rem 1rem;
 display: flex;
 opacity: .1;
-z-index: 0;
 max-width: 1440px;
 justify-self: anchor-center;
+pointer-events: none;
 }
 
 .line-overlay-section {
     width: 25%;
     border-left: .5px solid white;
     border-right: .5px solid white;
+}
+
+
+/*////////////////*/
+/* Landing Section */
+/*////////////////*/
+
+.landing-section {
+  max-width: 1440px;
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home-big-name {
+  font-size: 14vw;
+  font-weight: 700;
+  padding-top: 1rem;
+  max-width: 1440px;
+  width: 100%;
+  pointer-events: none;
+}
+
+.landing-row{
+width: 100%;
+display: flex;
+flex-direction: row;
+margin-bottom: 6rem;
+margin-top: 1rem;
+
+}
+
+.landing-about{
+width: 50%;
+white-space: nowrap;
+}
+
+.landing-about-text{
+  width: 50%;
+}
+
+.landing-scroll-button {
+width: 50%;
 }
 
 
@@ -198,7 +240,7 @@ justify-self: anchor-center;
 .sp-section {
   max-width: 1440px;
   width: 100%;
-
+  padding: 4rem 0rem;
 }
 
 .sp-header {
@@ -212,6 +254,7 @@ font-size: 4rem;
   width: 100%;
   gap: 1rem;
   justify-content: space-between;
+  margin-bottom: 7rem;
 }
 
 .sp-card-large {
@@ -222,6 +265,104 @@ width: 60%;
 width: 40%;
 }
 
-.sp-card-image{
+.sp-card-image-container {
+  overflow: hidden;
+  display: inline-block;
+  width: 100%; 
+}
+
+.sp-card-image {
+  transition: transform 0.5s ease;
+  display: block;
   width: 100%;
+  height: auto;
+}
+
+
+.sp-card-image:hover {
+  transform: scale(1.05); /* Slight zoom in */
+}
+
+.sp-caption{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.projects-button{
+  width: 50%;
+  margin-top: -2rem;
+}
+
+/*////////////////*/
+/* About Section */
+/*////////////////*/
+
+
+.about-section {
+  max-width: 1440px;
+  width: 100%;
+  padding: 10rem 0rem;
+}
+
+.about-row{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.about-title{
+  width: 25%;
+}
+
+.about-desc {
+  width: 75%;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.about-button{
+margin-top: 5rem;
+padding-left: 25%;
+}
+
+
+/*////////////////*/
+/* Contact Section */
+/*////////////////*/
+
+.contact-section-space{
+  height: 75vh;
+  pointer-events: none;
+
+}
+
+
+.contact-section{
+height: 85vh;
+padding-top: 10vh;
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background-color: white;
+color: var(--black);
+position: fixed;
+bottom: 0;
+z-index: -10;
+}
+
+.contact-text-other{
+  
+}
+
+.contact-text{
+  font-size: 5vw;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.contact-button{
+
 }

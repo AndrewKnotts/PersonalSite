@@ -6,6 +6,8 @@
     <title>Andrew Knotts</title>
     <link rel="stylesheet" href="CSS/homepage.css" />
     <link rel="stylesheet" href="CSS/styles.css" />
+<!-- Inter font: All weights and styles -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link
       rel="apple-touch-icon"
@@ -70,18 +72,33 @@
     <!-- MAIN CONTENT -->
 
     <main class="main-content">
-      <!-- BIG NAME -->
-      <div class="home-big-name" data-cursor-hover>
-        ANDREW<br />
-        KNOTTS
-      </div>
+      <!-- LANDING CONTENT -->
+      <section class="landing-section section-dark">
+        <div class="home-big-name" data-cursor-hover>ANDREW</div>
+        <div class="home-big-name" data-cursor-hover>KNOTTS</div>
+        <div class="landing-row">
+          <div class="landing-about">
+            Hello there — I'm Katherine, an agile designer hopping <br />across
+            digital and physical worlds. Currently creating <br />impactful
+            visual experiences @ TGC EG
+          </div>
+          <div class="landing-scroll-button">
+            <div class="styled-button">SCROLL TO EXPLORE</div>
+          </div>
+        </div>
+      </section>
 
-      <section class="sp-section">
-        <div class="sp-header">SELECTED<br> PROJECTS</div>
+      <section class="sp-section section-dark">
+        <div class="sp-header">
+          SELECTED<br />
+          PROJECTS
+        </div>
 
         <div class="sp-row">
           <a class="sp-card-large">
-            <img class="sp-card-image" src="assets\example.png" alt="" />
+            <div class="sp-card-image-container">
+              <img class="sp-card-image" src="assets/example.png" alt="" />
+            </div>
 
             <div class="sp-caption">
               <div class="sp-caption-left">TITLE OF THING</div>
@@ -89,7 +106,9 @@
             </div>
           </a>
           <a class="sp-card-small">
-            <img class="sp-card-image" src="assets\example.png" alt="" />
+            <div class="sp-card-image-container">
+              <img class="sp-card-image" src="assets/example.png" alt="" />
+            </div>
 
             <div class="sp-caption">
               <div class="sp-caption-left">TITLE OF THING</div>
@@ -97,8 +116,84 @@
             </div>
           </a>
         </div>
+
+        <div class="sp-row">
+          <a class="sp-card-small">
+            <div class="sp-card-image-container">
+              <img class="sp-card-image" src="assets/example.png" alt="" />
+            </div>
+
+            <div class="sp-caption">
+              <div class="sp-caption-left">TITLE OF THING</div>
+              <div class="sp-caption-right">CATEGORY</div>
+            </div>
+          </a>
+          <a class="sp-card-large">
+            <div class="sp-card-image-container">
+              <img class="sp-card-image" src="assets/example.png" alt="" />
+            </div>
+
+            <div class="sp-caption">
+              <div class="sp-caption-left">TITLE OF THING</div>
+              <div class="sp-caption-right">CATEGORY</div>
+            </div>
+          </a>
+         
+        </div>
+
+        <div class="sp-row">
+          <a class="sp-card-large">
+            <div class="sp-card-image-container">
+              <img class="sp-card-image" src="assets/example.png" alt="" />
+            </div>
+
+            <div class="sp-caption">
+              <div class="sp-caption-left">TITLE OF THING</div>
+              <div class="sp-caption-right">CATEGORY</div>
+            </div>
+          </a>
+          <a class="sp-card-small">
+            <div class="sp-card-image-container">
+              <img class="sp-card-image" src="assets/example.png" alt="" />
+            </div>
+
+            <div class="sp-caption">
+              <div class="sp-caption-left">TITLE OF THING</div>
+              <div class="sp-caption-right">CATEGORY</div>
+            </div>
+          </a>
+          
+        </div>
+        <div class="projects-button">
+          <div class="styled-button">SCROLL TO EXPLORE</div>
+        </div>
+        
       </section>
+
+      <section class="about-section section-dark">
+        <div class="about-row">
+          <div class="about-title">ABOUT ME</div>
+          <div class="about-desc">I approach all things design with a distinct blend of  play and minimalism, seamlessly  navigating design challenges and delivering  functional + delightful solutions.</div>
+        </div>
+        <div class="about-button">
+          <div class="styled-button">SCROLL TO EXPLORE</div>
+        </div>
+      </section>
+
+      
     </main>
+    <div class="contact-section-space"></div>
+
+      <section class="contact-section">
+
+        <div class="contact-text-other">other text here</div>
+        <div class="contact-text">LET’S CREATE<br>
+          GREAT THINGS together.</div>
+        <div class="contact-button">
+          <div class="styled-button">SCROLL TO EXPLORE</div>
+        </div>
+
+      </section>
   </body>
   <script src="JS/homepage.js"></script>
 </html>
