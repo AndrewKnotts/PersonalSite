@@ -6,10 +6,67 @@
 }
 
 body {
-  background: #0f0f0f;
+  background: var(--black);
   color: #fff;
   font-family: "Arial", sans-serif;
 }
+
+
+/*////////////////*/
+/*Main content container */
+/*////////////////*/
+
+.main-content{
+  margin: 0rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*////////////////*/
+/* Name */
+/*////////////////*/
+
+
+.home-big-name {
+  font-size: 17vw;
+  font-weight: 700;
+  padding-top: 1rem;
+  max-width: 1440px;
+}
+
+/*////////////////*/
+/* Cursor Styles */
+/*////////////////*/
+
+
+.cursor {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.cursor-small {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  mix-blend-mode: difference;
+  transition: transform 0.4s ease;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center center;
+}
+
+.cursor-large {
+  width: 60px;
+  height: 60px;
+  border: 2px solid white;
+  mix-blend-mode: difference;
+  transition: opacity 0.3s ease;
+}
+
 
 /*////////////////*/
 /* Header layout */
@@ -21,10 +78,11 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: #111;
-  border-bottom: 1px solid #222;
+  background: var(--black);
+  border-bottom: 1px solid #ffffff1f;
   position: relative;
   z-index: 10;
+  height: 60px;
 }
 
 /* Header sections */
@@ -120,6 +178,8 @@ margin: 0rem 1rem;
 display: flex;
 opacity: .1;
 z-index: 0;
+max-width: 1440px;
+justify-self: anchor-center;
 }
 
 .line-overlay-section {
@@ -128,3 +188,40 @@ z-index: 0;
     border-right: .5px solid white;
 }
 
+
+
+/*////////////////*/
+/* Portfolio Section */
+/*////////////////*/
+
+
+.sp-section {
+  max-width: 1440px;
+  width: 100%;
+
+}
+
+.sp-header {
+font-size: 4rem;
+}
+
+.sp-row{
+  display: flex;
+  flex-direction: row;
+  margin: 3rem 0rem;
+  width: 100%;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.sp-card-large {
+width: 60%;
+}
+
+.sp-card-small {
+width: 40%;
+}
+
+.sp-card-image{
+  width: 100%;
+}
