@@ -1,8 +1,43 @@
 :root {
     --black: #171717;
     --white: #ffffff;
-  
+    --pixel-size: min(12vw, 12vh);
   }
+
+
+  
+/*////////////////*/
+/* Cursor Styles */
+/*////////////////*/
+
+
+.cursor {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.cursor-small {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  mix-blend-mode: difference;
+  transition: transform 0.4s ease;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center center;
+}
+
+.cursor-large {
+  width: 60px;
+  height: 60px;
+  border: 2px solid white;
+  mix-blend-mode: difference;
+  transition: opacity 0.3s ease;
+}
+
 
   /*////////////////*/
 /* Button Styles */
@@ -13,7 +48,7 @@
   .styled-button{
     font-size: 16px;
     padding: 1.5rem 4rem;
-    border: 1px solid white;
+    border: 1px solid var(--white);
     width: min-content;
     white-space: nowrap;
     transition: all 0.3s ease;
@@ -26,3 +61,79 @@
     color: black;
     background-color: white;
   }
+
+    
+  .styled-button-dark{
+    font-size: 16px;
+    padding: 1.5rem 4rem;
+    border: 1px solid var(--black);
+    width: min-content;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: var(--black);
+    background-color: var(--white)
+  }
+  
+  .styled-button-dark:hover{
+    color: var(--white);
+    background-color: var(--black);
+  }
+
+
+ /*////////////////*/
+/* Animation Styles */
+/*////////////////*/
+
+
+
+.fade-slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.reveal-wrapper {
+  overflow: hidden;
+}
+
+.slide-up-reveal-inner {
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform 1s ease;
+  will-change: transform;
+}
+
+.reveal-wrapper.visible .slide-up-reveal-inner {
+  transform: translateY(0);
+}
+
+
+
+.image-reveal-wrapper {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.image-reveal {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(0.9);
+  clip-path: inset(100% 0 0 0); /* top to bottom reveal */
+  transition: transform .7s ease, clip-path .7s ease;
+  will-change: transform, clip-path;
+}
+
+.image-reveal-wrapper.visible .image-reveal {
+  transform: scale(1);
+  clip-path: inset(0 0 0 0);
+}

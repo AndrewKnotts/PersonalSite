@@ -10,10 +10,6 @@
 
 //     function draw() {
 //       background(0, 0, 0, 25);  // semi-transparent for a subtle trail fade
-      
-
-
-      
 
 //       // Draw and update all particles
 //       for (let i = particles.length - 1; i >= 0; i--) {
@@ -21,7 +17,6 @@
 //         fill(255, 255, 255, p.alpha); // cyan glow
 
 //         rect(p.x, p.y, pixelSize, pixelSize);
-
 
 //         p.alpha -= .1; // fade out
 //         p.scale -= 0.99; // optional shrink effect
@@ -31,8 +26,6 @@
 //         }
 //       }
 //     }
- 
-
 
 //     function mouseMoved() {
 //       const x = Math.floor(mouseX / pixelSize) * pixelSize;
@@ -50,26 +43,23 @@
 //       resizeCanvas(windowWidth, windowHeight);
 //     }
 
+const cursorSmall = document.querySelector(".cursor-small");
+const cursorLarge = document.querySelector(".cursor-large");
 
+let mouseX = 0,
+  mouseY = 0;
+let largeX = 0,
+  largeY = 0;
 
-
-
-
-const cursorSmall = document.querySelector('.cursor-small');
-const cursorLarge = document.querySelector('.cursor-large');
-
-let mouseX = 0, mouseY = 0;
-let largeX = 0, largeY = 0;
-
-document.addEventListener('mousemove', (e) => {
+document.addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
   cursorSmall.style.left = `${mouseX}px`;
   cursorSmall.style.top = `${mouseY}px`;
 
   // Make sure cursors are visible again
-  cursorSmall.style.opacity = '1';
-  cursorLarge.style.opacity = '1';
+  cursorSmall.style.opacity = "1";
+  cursorLarge.style.opacity = "1";
 });
 
 function animate() {
@@ -82,23 +72,95 @@ function animate() {
 animate();
 
 // Hide cursors when mouse leaves the window
-window.addEventListener('mouseout', (e) => {
+window.addEventListener("mouseout", (e) => {
   if (!e.relatedTarget && !e.toElement) {
-    cursorSmall.style.opacity = '0';
-    cursorLarge.style.opacity = '0';
+    cursorSmall.style.opacity = "0";
+    cursorLarge.style.opacity = "0";
   }
 });
 
 // Hover effect on custom elements
-const hoverElements = document.querySelectorAll('[data-cursor-hover]');
+const hoverElements = document.querySelectorAll("[data-cursor-hover]");
 
-hoverElements.forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursorLarge.style.opacity = '0';
-    cursorSmall.style.transform = 'translate(-50%, -50%) scale(3)';
+hoverElements.forEach((el) => {
+  el.addEventListener("mouseenter", () => {
+    cursorLarge.style.opacity = "0";
+    cursorSmall.style.transform = "translate(-50%, -50%) scale(3)";
   });
-  el.addEventListener('mouseleave', () => {
-    cursorLarge.style.opacity = '1';
-    cursorSmall.style.transform = 'translate(-50%, -50%) scale(1)';
+  el.addEventListener("mouseleave", () => {
+    cursorLarge.style.opacity = "1";
+    cursorSmall.style.transform = "translate(-50%, -50%) scale(1)";
   });
 });
+
+//Scrolling Behaviors
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollButton = document.getElementById("scroll-to-projects");
+  const targetSection = document.getElementById("projects-section");
+
+  scrollButton.addEventListener("click", () => {
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+document
+  .getElementById("contact-link")
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the anchor's default behavior
+    const contactSection = document.getElementById("contact-section");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+let lastKnownScrollY = 0;
+let ticking = false;
+
+window.addEventListener("scroll", () => {
+  lastKnownScrollY = window.scrollY;
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      document.getElementById("name-move-down").style.top = `${
+        lastKnownScrollY * 0.5
+      }px`;
+      document.getElementById("name-move-down").style.opacity = `${
+        (1000 - lastKnownScrollY) / 4000
+      }`;
+
+      document.getElementById("name-move-down-slow").style.top = `${
+        lastKnownScrollY * 0.25
+      }px`;
+      document.getElementById("name-move-down-slow").style.opacity = `${
+        (1000 - lastKnownScrollY) / 2000
+      }`;
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+
+const grid = document.getElementById("pixelGrid");
+const cols = 4,
+  rows = 6;
+const pixels = [];
+
+// Create grid
+for (let i = 0; i < cols * rows; i++) {
+  const pixel = document.createElement("div");
+  pixel.classList.add("pixel");
+  grid.appendChild(pixel);
+  pixels.push(pixel);
+}
+
+// Default animation loop
+let index = 0;
+setInterval(() => {
+  pixels.forEach((p) => p.classList.remove("on"));
+
+  // Light up one pixel per frame in sequence
+  pixels[index].classList.add("on");
+  index = (index + 1) % pixels.length;
+}, 500);

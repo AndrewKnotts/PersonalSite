@@ -6,8 +6,11 @@
     <title>Andrew Knotts</title>
     <link rel="stylesheet" href="CSS/homepage.css" />
     <link rel="stylesheet" href="CSS/styles.css" />
-<!-- Inter font: All weights and styles -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Inter font: All weights and styles -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       rel="apple-touch-icon"
@@ -49,14 +52,14 @@
       </div>
       <nav class="header-nav"></nav>
       <nav class="header-nav">
-        <a href="HTML/projects.html" class="nav-link" data-cursor-hover
-          >PROJECTS</a
-        >
-        <a href="HTML/about.html" class="nav-link">ABOUT</a>
-        <a href="#resume" class="nav-link">RESUME</a>
+        <a href="/projects" class="nav-link" data-cursor-hover>PROJECTS</a>
+        <a href="/about" class="nav-link" data-cursor-hover>ABOUT</a>
+        <a href="#resume" class="nav-link" data-cursor-hover>RESUME</a>
       </nav>
       <div class="header-right">
-        <a href="#contact" class="nav-link">CONTACT</a>
+        <a href="#" class="nav-link" data-cursor-hover id="contact-link"
+          >CONTACT</a
+        >
       </div>
     </header>
 
@@ -68,132 +71,253 @@
       <div class="line-overlay-section"></div>
       <div class="line-overlay-section"></div>
     </div>
+    <div class="line-overlay2">
+      <div class="line-overlay-section2"></div>
+      <div class="line-overlay-section2"></div>
+      <div class="line-overlay-section2"></div>
+      <div class="line-overlay-section2"></div>
+    </div>
 
+    <!-- STATUS VARS -->
+
+    <div id="ambient-status" class="ambient-status">
+      <div class="ambient-status-elements">
+        <div class="status-group">
+          <span id="location" class="location"></span> <span id="clock"></span>
+        </div>
+        <div class="status-group">
+          <span id="time-spent"></span>
+          <div class="bottom-link">
+            <a  data-cursor-hover class="bottom-link" href="" >LINKEDIN</a>
+          </div>
+       
+        </div>
+      </div>
+    </div>
+
+    <!-- SCROLL TO TOP -->
+
+    <div
+      class="scroll-to-top"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+    >
+      <svg  data-cursor-hover class="arrow-up " viewBox="0 0 183 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M8.76849 99.5L91.5 16.7686L174.231 99.5"
+          stroke="white"
+          stroke-width="23"
+        />
+        <path
+          d="M8.76849 171.731L91.5 89L174.231 171.731"
+          stroke="white"
+          stroke-width="23"
+        />
+      </svg>
+    </div>
+
+      
     <!-- MAIN CONTENT -->
 
     <main class="main-content">
       <!-- LANDING CONTENT -->
       <section class="landing-section section-dark">
-        <div class="home-big-name" data-cursor-hover>ANDREW</div>
-        <div class="home-big-name" data-cursor-hover>KNOTTS</div>
+        <!-- <div class="home-big-name" data-cursor-hover>ANDREW</div> -->
+        <!-- <div class="home-big-name" data-cursor-hover>KNOTTS</div> -->
+        <!-- <div class="home-big-name" data-cursor-hover>KNOTTS</div> -->
+         <div class="landing-header">
+          <div class="home-big-name">
+            <img class="home-big-name-solid" src="assets\name_solid.svg" alt="">
+            <img id="name-move-down" class="home-big-name-outline" src="assets\name_outline.svg" alt="">
+            <img id="name-move-down-slow" class="home-big-name-outline" src="assets\name_outline.svg" alt="">
+           
+          </div>
+          <div class="grid-container">
+            <div class="grid-wrapper" id="pixelGrid"></div>
+          </div>
+          
+
+         </div>
+        
+    
+
+
         <div class="landing-row">
-          <div class="landing-about">
+          <div class="landing-about fade-slide-up" data-delay=".0s">
             Hello there — I'm Katherine, an agile designer hopping <br />across
             digital and physical worlds. Currently creating <br />impactful
             visual experiences @ TGC EG
           </div>
           <div class="landing-scroll-button">
-            <div class="styled-button">SCROLL TO EXPLORE</div>
+            <div
+              id="scroll-to-projects"
+              class="styled-button fade-slide-up"
+              data-delay=".2s"
+              data-cursor-hover
+            >
+              SCROLL TO EXPLORE
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="sp-section section-dark">
-        <div class="sp-header">
-          SELECTED<br />
-          PROJECTS
+      <section id="projects-section" class="sp-section section-dark">
+        <div class="sp-header reveal-wrapper">
+          <div class="slide-up-reveal-inner" data-delay="0.2s">
+            SELECTED<br />
+            PROJECTS
+          </div>
         </div>
 
         <div class="sp-row">
-          <a class="sp-card-large">
-            <div class="sp-card-image-container">
-              <img class="sp-card-image" src="assets/example.png" alt="" />
+          <a class="sp-card-large" data-cursor-hover>
+            <div
+              class="sp-card-image-container image-reveal-wrapper"
+              data-delay="0.3s"
+            >
+              <img
+                class="sp-card-image image-reveal"
+                src="assets/example.png"
+                alt=""
+              />
             </div>
 
-            <div class="sp-caption">
-              <div class="sp-caption-left">TITLE OF THING</div>
-              <div class="sp-caption-right">CATEGORY</div>
+            <div class="sp-caption reveal-wrapper">
+              <div
+                class="sp-caption-left slide-up-reveal-inner"
+                data-delay=".4s"
+              >
+                TITLE OF THING
+              </div>
+              <div
+                class="sp-caption-right slide-up-reveal-inner"
+                data-delay=".7s"
+              >
+                CATEGORY
+              </div>
             </div>
           </a>
-          <a class="sp-card-small">
-            <div class="sp-card-image-container">
-              <img class="sp-card-image" src="assets/example.png" alt="" />
+          <a class="sp-card-small" data-cursor-hover>
+            <div
+              class="sp-card-image-container image-reveal-wrapper"
+              data-delay="0.3s"
+            >
+              <img
+                class="sp-card-image image-reveal"
+                src="assets/example.png"
+                alt=""
+              />
             </div>
 
-            <div class="sp-caption">
-              <div class="sp-caption-left">TITLE OF THING</div>
-              <div class="sp-caption-right">CATEGORY</div>
+            <div class="sp-caption reveal-wrapper">
+              <div
+                class="sp-caption-left slide-up-reveal-inner"
+                data-delay=".4s"
+              >
+                TITLE OF THING
+              </div>
+              <div
+                class="sp-caption-right slide-up-reveal-inner"
+                data-delay=".7s"
+              >
+                CATEGORY
+              </div>
             </div>
           </a>
         </div>
 
         <div class="sp-row">
-          <a class="sp-card-small">
-            <div class="sp-card-image-container">
-              <img class="sp-card-image" src="assets/example.png" alt="" />
+          <a class="sp-card-large" data-cursor-hover>
+            <div
+              class="sp-card-image-container image-reveal-wrapper"
+              data-delay="0.3s"
+            >
+              <img
+                class="sp-card-image image-reveal"
+                src="assets/example.png"
+                alt=""
+              />
             </div>
 
-            <div class="sp-caption">
-              <div class="sp-caption-left">TITLE OF THING</div>
-              <div class="sp-caption-right">CATEGORY</div>
+            <div class="sp-caption reveal-wrapper">
+              <div
+                class="sp-caption-left slide-up-reveal-inner"
+                data-delay=".4s"
+              >
+                TITLE OF THING
+              </div>
+              <div
+                class="sp-caption-right slide-up-reveal-inner"
+                data-delay=".7s"
+              >
+                CATEGORY
+              </div>
             </div>
           </a>
-          <a class="sp-card-large">
-            <div class="sp-card-image-container">
-              <img class="sp-card-image" src="assets/example.png" alt="" />
+          <a class="sp-card-small" data-cursor-hover>
+            <div
+              class="sp-card-image-container image-reveal-wrapper"
+              data-delay="0.3s"
+            >
+              <img
+                class="sp-card-image image-reveal"
+                src="assets/example.png"
+                alt=""
+              />
             </div>
 
-            <div class="sp-caption">
-              <div class="sp-caption-left">TITLE OF THING</div>
-              <div class="sp-caption-right">CATEGORY</div>
+            <div class="sp-caption reveal-wrapper">
+              <div
+                class="sp-caption-left slide-up-reveal-inner"
+                data-delay=".4s"
+              >
+                TITLE OF THING
+              </div>
+              <div
+                class="sp-caption-right slide-up-reveal-inner"
+                data-delay=".7s"
+              >
+                CATEGORY
+              </div>
             </div>
           </a>
-         
         </div>
 
-        <div class="sp-row">
-          <a class="sp-card-large">
-            <div class="sp-card-image-container">
-              <img class="sp-card-image" src="assets/example.png" alt="" />
-            </div>
-
-            <div class="sp-caption">
-              <div class="sp-caption-left">TITLE OF THING</div>
-              <div class="sp-caption-right">CATEGORY</div>
-            </div>
-          </a>
-          <a class="sp-card-small">
-            <div class="sp-card-image-container">
-              <img class="sp-card-image" src="assets/example.png" alt="" />
-            </div>
-
-            <div class="sp-caption">
-              <div class="sp-caption-left">TITLE OF THING</div>
-              <div class="sp-caption-right">CATEGORY</div>
-            </div>
-          </a>
-          
-        </div>
         <div class="projects-button">
-          <div class="styled-button">SCROLL TO EXPLORE</div>
+          <div class="styled-button fade-slide-up" data-cursor-hover>
+            SCROLL TO EXPLORE
+          </div>
         </div>
-        
       </section>
 
       <section class="about-section section-dark">
         <div class="about-row">
           <div class="about-title">ABOUT ME</div>
-          <div class="about-desc">I approach all things design with a distinct blend of  play and minimalism, seamlessly  navigating design challenges and delivering  functional + delightful solutions.</div>
+          <div class="about-desc">
+            I approach all things design with a distinct blend of play and
+            minimalism, seamlessly navigating design challenges and delivering
+            functional + delightful solutions.
+          </div>
         </div>
         <div class="about-button">
-          <div class="styled-button">SCROLL TO EXPLORE</div>
+          <div class="styled-button" data-cursor-hover>SCROLL TO EXPLORE</div>
         </div>
       </section>
-
-      
     </main>
-    <div class="contact-section-space"></div>
+    <div id="contact-section" class="contact-section-space"></div>
 
-      <section class="contact-section">
-
-        <div class="contact-text-other">other text here</div>
-        <div class="contact-text">LET’S CREATE<br>
-          GREAT THINGS together.</div>
-        <div class="contact-button">
-          <div class="styled-button">SCROLL TO EXPLORE</div>
+    <section class="contact-section">
+      <div class="contact-text-other">other text here</div>
+      <div class="contact-text">
+        LET’S CREATE<br />
+        GREAT THINGS together.
+      </div>
+      <div class="contact-button">
+        <div class="styled-button-dark" data-cursor-hover>
+          SCROLL TO EXPLORE
         </div>
-
-      </section>
+      </div>
+    </section>
   </body>
   <script src="JS/homepage.js"></script>
+  <script src="JS/base.js"></script>
 </html>
