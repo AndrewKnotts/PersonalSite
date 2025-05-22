@@ -42,58 +42,30 @@
 //     function windowResized() {
 //       resizeCanvas(windowWidth, windowHeight);
 //     }
+//Scrolling Behaviors
 
-const cursorSmall = document.querySelector(".cursor-small");
-const cursorLarge = document.querySelector(".cursor-large");
 
-let mouseX = 0,
-  mouseY = 0;
-let largeX = 0,
-  largeY = 0;
+const nameFast = document.getElementById("name-move-down");
+const nameSlow = document.getElementById("name-move-down-slow");
 
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursorSmall.style.left = `${mouseX}px`;
-  cursorSmall.style.top = `${mouseY}px`;
+let lastKnownScrollY = 0;
+let ticking = false;
 
-  // Make sure cursors are visible again
-  cursorSmall.style.opacity = "1";
-  cursorLarge.style.opacity = "1";
-});
+window.addEventListener("scroll", () => {
+  lastKnownScrollY = window.scrollY;
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      nameFast.style.transform = `translateY(${lastKnownScrollY * 0.5}px)`;
+      nameFast.style.opacity = `${(1000 - lastKnownScrollY) / 4000}`;
 
-function animate() {
-  largeX += (mouseX - largeX) * 0.08;
-  largeY += (mouseY - largeY) * 0.08;
-  cursorLarge.style.left = `${largeX}px`;
-  cursorLarge.style.top = `${largeY}px`;
-  requestAnimationFrame(animate);
-}
-animate();
+      nameSlow.style.transform = `translateY(${lastKnownScrollY * 0.25}px)`;
+      nameSlow.style.opacity = `${(1000 - lastKnownScrollY) / 2000}`;
 
-// Hide cursors when mouse leaves the window
-window.addEventListener("mouseout", (e) => {
-  if (!e.relatedTarget && !e.toElement) {
-    cursorSmall.style.opacity = "0";
-    cursorLarge.style.opacity = "0";
+      ticking = false;
+    });
+    ticking = true;
   }
 });
-
-// Hover effect on custom elements
-const hoverElements = document.querySelectorAll("[data-cursor-hover]");
-
-hoverElements.forEach((el) => {
-  el.addEventListener("mouseenter", () => {
-    cursorLarge.style.opacity = "0";
-    cursorSmall.style.transform = "translate(-50%, -50%) scale(3)";
-  });
-  el.addEventListener("mouseleave", () => {
-    cursorLarge.style.opacity = "1";
-    cursorSmall.style.transform = "translate(-50%, -50%) scale(1)";
-  });
-});
-
-//Scrolling Behaviors
 
 document.addEventListener("DOMContentLoaded", () => {
   const scrollButton = document.getElementById("scroll-to-projects");
@@ -115,32 +87,6 @@ document
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
   });
-
-let lastKnownScrollY = 0;
-let ticking = false;
-
-window.addEventListener("scroll", () => {
-  lastKnownScrollY = window.scrollY;
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      document.getElementById("name-move-down").style.top = `${
-        lastKnownScrollY * 0.5
-      }px`;
-      document.getElementById("name-move-down").style.opacity = `${
-        (1000 - lastKnownScrollY) / 4000
-      }`;
-
-      document.getElementById("name-move-down-slow").style.top = `${
-        lastKnownScrollY * 0.25
-      }px`;
-      document.getElementById("name-move-down-slow").style.opacity = `${
-        (1000 - lastKnownScrollY) / 2000
-      }`;
-      ticking = false;
-    });
-    ticking = true;
-  }
-});
 
 const grid = document.getElementById("pixelGrid");
 const cols = 4,

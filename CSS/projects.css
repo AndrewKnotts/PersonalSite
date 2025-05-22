@@ -1,0 +1,108 @@
+.all-projects-section {
+  max-width: 1440px;
+  width: 100%;
+  padding: 4rem 0rem;
+}
+
+.project-row-container {
+  width: 100%;
+      padding: 10rem 0rem;
+}
+
+.projects-header {
+  font-size: 4rem;
+  padding-top: 3rem;
+}
+
+.project-row {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 7rem;
+  border-bottom: 1px solid white;
+  opacity: 0.7;
+  transition: all 0.6s ease;
+  cursor: pointer;
+  font-size: 14px;
+}
+.project-row:hover {
+  opacity: 1;
+}
+
+.project-title {
+  width: 25%;
+}
+
+.project-desc {
+  width: 25%;
+}
+
+.project-img-container {
+  width: 25%;
+  opacity: 0;
+  transition: all 0.6s ease;
+  padding: 1rem;
+  overflow: hidden;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.project-row:hover .project-img-container {
+  opacity: 1;
+}
+
+.project-row:hover .project-img {
+  transform: scale(1.05); /* Slight zoom in */
+}
+
+.project-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+  pointer-events: none;
+
+}
+
+.project-icon {
+  width: 25%;
+  height: 48px;
+  display: flex;
+  justify-content: right;
+  padding-right: 3rem;
+}
+
+.project-icon-fill {
+  position: absolute;
+  transition: all 0.6s ease;
+  height: 3rem;
+}
+
+.project-icon-outline1 {
+  position: absolute;
+  transition: all 0.6s ease;
+
+  height: 3rem;
+}
+
+.project-icon-outline2 {
+  height: 3rem;
+
+  position: absolute;
+  transition: all 0.6s ease;
+}
+
+.project-row:hover .project-icon-fill {
+  padding-right: 0.5rem;
+}
+
+.project-row:hover .project-icon-outline1 {
+  padding-right: 1.5rem;
+  opacity: 0.8;
+}
+.project-row:hover .project-icon-outline2 {
+  padding-right: 2.5rem;
+  opacity: 0.6;
+}

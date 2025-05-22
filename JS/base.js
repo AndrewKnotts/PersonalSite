@@ -59,8 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
           const wrapper = entry.target;
           const image = wrapper.querySelector(".image-reveal");
           const delay = wrapper.dataset.delay || "0s";
+
+          // Apply the initial delay for entrance animation
           image.style.transitionDelay = delay;
           wrapper.classList.add("visible");
+
+          // After delay is done, remove transition delay so hover feels natural
+          const delayMs = parseFloat(delay) * (delay.includes("ms") ? 1 : 1000); // convert to ms if needed
+          setTimeout(() => {
+            image.style.transitionDelay = ""; // remove it
+          }, delayMs);
+
           observer.unobserve(wrapper);
         }
       });
@@ -72,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   wrappers.forEach((wrapper) => observer.observe(wrapper));
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const clockEl = document.getElementById("clock");
@@ -135,3 +145,57 @@ document.addEventListener("DOMContentLoaded", () => {
       console.warn("Location lookup failed", err);
     });
 });
+
+
+
+
+const cursorSmall = document.querySelector(".cursor-small");
+const cursorLarge = document.querySelector(".cursor-large");
+
+let mouseX = 0,
+  mouseY = 0;
+let largeX = 0,
+  largeY = 0;
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  cursorSmall.style.left = `${mouseX}px`;
+  cursorSmall.style.top = `${mouseY}px`;
+
+  // Make sure cursors are visible again
+  cursorSmall.style.opacity = "1";
+  cursorLarge.style.opacity = "1";
+});
+
+function animate() {
+  largeX += (mouseX - largeX) * 0.1;
+  largeY += (mouseY - largeY) * 0.1;
+  cursorLarge.style.left = `${largeX}px`;
+  cursorLarge.style.top = `${largeY}px`;
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Hide cursors when mouse leaves the window
+window.addEventListener("mouseout", (e) => {
+  if (!e.relatedTarget && !e.toElement) {
+    cursorSmall.style.opacity = "0";
+    cursorLarge.style.opacity = "0";
+  }
+});
+
+// Hover effect on custom elements
+const hoverElements = document.querySelectorAll("[data-cursor-hover]");
+
+hoverElements.forEach((el) => {
+  el.addEventListener("mouseenter", () => {
+    cursorLarge.style.opacity = "0";
+    cursorSmall.style.transform = "translate(-50%, -50%) scale(3)";
+  });
+  el.addEventListener("mouseleave", () => {
+    cursorLarge.style.opacity = "1";
+    cursorSmall.style.transform = "translate(-50%, -50%) scale(1)";
+  });
+});
+
