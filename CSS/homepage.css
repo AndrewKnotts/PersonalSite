@@ -64,7 +64,7 @@ margin-top: 1rem;
 .landing-about{
 width: 50%;
 white-space: nowrap;
-pointer-events: none;
+cursor: default;
 }
 
 .landing-about-text{
