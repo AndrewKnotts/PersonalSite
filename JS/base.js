@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
           const delay = el.dataset.delay || "0s";
           el.style.transitionDelay = delay;
           el.classList.add("visible");
+          
+          // Clean up will-change after animation
+          setTimeout(() => {
+            el.style.willChange = 'auto';
+          }, 600 + parseFloat(delay) * 1000); // 600ms + delay
+          
           observer.unobserve(el);
         }
       });
@@ -20,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   elements.forEach((el) => observer.observe(el));
 });
-
 document.addEventListener("DOMContentLoaded", () => {
   const wrappers = document.querySelectorAll(".reveal-wrapper");
 

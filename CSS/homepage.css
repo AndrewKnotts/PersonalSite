@@ -65,6 +65,7 @@ margin-top: 1rem;
 width: 50%;
 white-space: nowrap;
 cursor: default;
+    line-height: 1.6rem;
 }
 
 .landing-about-text{
@@ -85,13 +86,18 @@ width: 50%;
 .sp-section {
   max-width: 1440px;
   width: 100%;
-  padding: 4rem 0rem;
+  padding: 10rem 0rem;
 }
 
 .sp-header {
 font-size: 4rem;
 overflow: hidden;
 pointer-events: none;
+}
+
+.sp-title{
+  font-weight: 300;
+  opacity: 1;
 }
 
 .sp-row{
@@ -116,6 +122,7 @@ width: 45%;
   overflow: hidden;
   display: inline-block;
   width: 100%; 
+  margin-bottom: .5rem;
 }
 
 .sp-card-image {
@@ -137,6 +144,7 @@ width: 45%;
   flex-direction: row;
   justify-content: space-between;
 pointer-events: none;
+    padding: 0rem 0rem;
 
 }
 
@@ -144,6 +152,12 @@ pointer-events: none;
 .sp-caption-right {
   text-decoration: none;
   color: inherit;
+  font-size: .9rem;
+}
+
+.sp-caption-right{
+  font-weight: 200;
+  opacity: .8;
 }
 
 .projects-button{
@@ -176,10 +190,13 @@ pointer-events: none;
 
 .about-desc {
   width: 75%;
-  font-size: 3rem;
   font-weight: 300;
 pointer-events: none;
 
+}
+
+.about-desc-text{
+  font-size: 3vw;
 }
 
 .about-button{

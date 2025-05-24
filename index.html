@@ -104,22 +104,28 @@
 
         <div class="landing-row">
           <div class="landing-about fade-slide-up" data-delay=".0s">
-           Hi, I’m Andrew — a designer & developer focused on creating <br>
-intuitive, scalable experiences. Currently engineering the platform <br>
-and leading all things brand and frontend @ <a class="in-text-link" href="https://eranova.ai" target="_blank" rel="noopener noreferrer" data-cursor-hover>Eranova</a>.
+            Hi, I’m Andrew — a designer & developer focused on creating <br />
+            intuitive, scalable experiences. Currently engineering the platform <br />
+            and leading all things brand and frontend @
+            <a class="in-text-link" href="https://eranova.ai" target="_blank" rel="noopener noreferrer" data-cursor-hover>Eranova</a>.
           </div>
           <div class="landing-scroll-button">
-            <div id="scroll-to-projects" class="styled-button fade-slide-up" data-delay=".2s" data-cursor-hover>SCROLL TO EXPLORE</div>
+            <div class="styled-button-container fade-slide-up" data-delay=".2s">
+              <div id="scroll-to-projects" class="styled-button" data-cursor-hover>
+                EXPLORE WORK
+                <svg data-cursor-hover class="arrow-down-button" viewBox="0 0 183 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.76849 99.5L91.5 16.7686L174.231 99.5" stroke="currentColor" stroke-width="23" />
+                  <path d="M8.76849 171.731L91.5 89L174.231 171.731" stroke="currentColor" stroke-width="23" />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="projects-section" class="sp-section section-dark">
         <div class="sp-header reveal-wrapper">
-          <div class="slide-up-reveal-inner" data-delay="0.2s">
-            SELECTED<br />
-            WORK
-          </div>
+          <div class="slide-up-reveal-inner sp-title" data-delay="0.2s">SELECTED WORK</div>
         </div>
 
         <div class="sp-row">
@@ -185,14 +191,22 @@ and leading all things brand and frontend @ <a class="in-text-link" href="https:
             </div>
 
             <div class="sp-caption reveal-wrapper">
-              <div class="sp-caption-left slide-up-reveal-inner" data-delay=".4s">GRAPHIC </div>
+              <div class="sp-caption-left slide-up-reveal-inner" data-delay=".4s">GRAPHIC</div>
               <div class="sp-caption-right slide-up-reveal-inner" data-delay=".7s">BRANDING, UI/UX, FRONTEND DEV</div>
             </div>
           </a>
         </div>
 
         <div class="projects-button">
-          <div class="styled-button fade-slide-up" data-cursor-hover>SCROLL TO EXPLORE</div>
+          <div class="styled-button-container fade-slide-up" data-delay=".2s">
+            <a href="/projects" class="styled-button" data-cursor-hover>
+              SEE ALL PROJECTS
+
+              <svg class="arrow-right-button" width="138" height="137" viewBox="0 0 138 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M137.5 128.5H114.5V39.2637L17.1318 136.632L0.868164 120.368L98.2363 23H9V0H137.5V128.5Z" fill="currentColor" />
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -200,8 +214,9 @@ and leading all things brand and frontend @ <a class="in-text-link" href="https:
         <div class="about-row">
           <div class="about-title">ABOUT ME</div>
           <div class="about-desc">
-            I approach all things design with a distinct blend of play and minimalism, seamlessly navigating design challenges and delivering
-            functional + delightful solutions.
+            <div class="about-desc-text">With an artist's eye for composition, I design</div>
+            <div class="about-desc-text">and build clean, cohesive products — solving </div>
+            <div class="about-desc-text">challenges with functional, satisfying solutions.</div> 
           </div>
         </div>
         <div class="about-button">
