@@ -110,3 +110,27 @@ setInterval(() => {
   pixels[index].classList.add("on");
   index = (index + 1) % pixels.length;
 }, 500);
+
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const lines = entry.target.querySelectorAll('.about-desc-text');
+          lines.forEach((line, index) => {
+            setTimeout(() => {
+              line.classList.add('visible');
+            }, index * 200); // Adjust delay as needed
+          });
+          observer.unobserve(entry.target); // Remove if you want the animation to happen only once
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const section = document.querySelector('.about-desc');
+    if (section) {
+      observer.observe(section);
+    }
+  });

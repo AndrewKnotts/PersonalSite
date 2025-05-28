@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+function observeFadeSlideUps(selector) {
   const elements = document.querySelectorAll(".fade-slide-up");
 
   const observer = new IntersectionObserver(
@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
           const delay = el.dataset.delay || "0s";
           el.style.transitionDelay = delay;
           el.classList.add("visible");
-          
+
           // Clean up will-change after animation
           setTimeout(() => {
-            el.style.willChange = 'auto';
+            el.style.willChange = "auto";
           }, 600 + parseFloat(delay) * 1000); // 600ms + delay
-          
+
           observer.unobserve(el);
         }
       });
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   elements.forEach((el) => observer.observe(el));
-});
-document.addEventListener("DOMContentLoaded", () => {
+}
+function observeReveals(selector) {
   const wrappers = document.querySelectorAll(".reveal-wrapper");
 
   const observer = new IntersectionObserver(
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   wrappers.forEach((wrapper) => observer.observe(wrapper));
-});
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const wrappers = document.querySelectorAll(".image-reveal-wrapper");
@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   wrappers.forEach((wrapper) => observer.observe(wrapper));
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const clockEl = document.getElementById("clock");
@@ -151,9 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
-
-
 const cursorSmall = document.querySelector(".cursor-small");
 const cursorLarge = document.querySelector(".cursor-large");
 
@@ -204,3 +200,26 @@ hoverElements.forEach((el) => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  // Global stuff still runs immediately
+  observeReveals(".reveal-wrapper:not(.contact-section .reveal-wrapper)");
+  observeFadeSlideUps(".fade-slide-up:not(.contact-section .fade-slide-up)");
+
+  let contactActivated = false;
+
+  window.addEventListener("scroll", () => {
+    const scrollBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 5;
+
+    if (scrollBottom && !contactActivated) {
+      contactActivated = true;
+      console.log("WHAHAHAHHAAH");
+
+      // Remove .not-ready so they can animate
+      document.querySelectorAll(".contact-section .not-ready").forEach((el) => el.classList.remove("not-ready"));
+
+      // Now activate the observers
+      observeReveals(".contact-section .reveal-wrapper");
+      observeFadeSlideUps(".contact-section .fade-slide-up");
+    }
+  });
+});
