@@ -289,6 +289,19 @@ padding-left: 25%;
 
 .landing-about{
 }
+
+
+
+.about-row{
+  flex-direction: column;
+  gap: 2rem;
+}
+.about-desc{
+  width: 100%;
+}
+.about-desc-text{
+font-size: 1.8rem;
+}
 }
 
 
