@@ -305,6 +305,9 @@ font-size: 1.8rem;
 }
 
 
-@media (max-width: 1000px) {
+@media (min-width: 1440px) {
+.about-desc-text{
+    font-size: 2.8rem
 
+}
 }
