@@ -98,6 +98,7 @@ pointer-events: none;
 .sp-title{
   font-weight: 300;
   opacity: 1;
+  font-family: "Doto", sans-serif;
 }
 
 .sp-row{
