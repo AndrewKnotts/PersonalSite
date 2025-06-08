@@ -571,6 +571,8 @@ gap: 2rem;
 
 .contact-word {
  height: 5vw;
+  font-family: "Major Mono Display", monospace;
+
 }
 
 
@@ -709,4 +711,28 @@ svg {
 .ambient-status-elements{
   width: 100%;
 }
+}
+
+/*ANIMATED GRAPHIC */
+.sprite_profile {
+  width: 100%; /* Scales the image to fill the container */
+  height: 100%; /* Scales the image to fill the container */
+  image-rendering: pixelated; /* Ensures the image is scaled without blurring */
+}
+
+.profile_pic_container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  height: auto;
+  max-width: 100%;
+}
+
+.profile_pic_container:hover {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  cursor: pointer;
+  height: auto;
+  max-width: 100%;
 }

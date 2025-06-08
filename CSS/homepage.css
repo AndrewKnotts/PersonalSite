@@ -65,7 +65,7 @@ margin-top: 1rem;
 width: 50%;
 white-space: nowrap;
 cursor: default;
-    line-height: 1.2rem;
+    line-height: 1.5rem;
 }
 
 .landing-about-text{
@@ -98,7 +98,8 @@ pointer-events: none;
 .sp-title{
   font-weight: 300;
   opacity: 1;
-  font-family: "Doto", sans-serif;
+ font-family: "Major Mono Display", monospace;
+  /* font-family: "Doto", sans-serif; */
 }
 
 .sp-row{
@@ -200,6 +201,8 @@ pointer-events: none;
 
 .about-desc-text{
   font-size: 3vw;
+  /* font-family: "Major Mono Display", monospace; */
+  font-weight: 200;
 }
 
 .about-button{

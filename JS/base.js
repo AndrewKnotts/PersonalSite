@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let contactActivated = false;
 
   window.addEventListener("scroll", () => {
-    const scrollBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 5;
+    const scrollBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 200;
 
     if (scrollBottom && !contactActivated) {
       contactActivated = true;
@@ -233,3 +233,41 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburgerBtn.classList.toggle('open');
     mobileNav.classList.toggle('open');
   });
+
+
+
+
+
+  
+// profile pic effect
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const imageContainer = document.getElementById('profile_pic_container');
+    const image = document.getElementById('profile_image');
+    
+    // Define the image sources
+    const initialImageSrc = '../assets/AnimatedGraphics/Profile_sprite_default2.gif'
+    const hoverImageSrc = '../assets/AnimatedGraphics/Profile_sprite_hover.png';
+    const clickImageSrc = '../assets/AnimatedGraphics/Profile_sprite_click.png';
+    
+    // Change image on hover
+    imageContainer.addEventListener('mouseover', () => {
+        image.src = hoverImageSrc;
+    });
+
+    // Revert image when not hovering
+    imageContainer.addEventListener('mouseout', () => {
+        image.src = initialImageSrc;
+    });
+
+   // Change image on click
+    imageContainer.addEventListener('click', () => {
+        image.src = clickImageSrc;
+        
+        // Revert image after 1 second
+        setTimeout(() => {
+            image.src = initialImageSrc;
+        }, 1000);
+    });
+});
+
