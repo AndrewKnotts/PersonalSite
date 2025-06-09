@@ -39,4 +39,7 @@ function runSequentialFadeInWhenVisible(containerSelector, itemSelector = ".fade
 
 runSequentialFadeInWhenVisible(".as-landing-text", ".fade-slide-up-s", 200);
 runSequentialFadeInWhenVisible(".a-skill-section", ".fade-slide-up-s", 200);
+runSequentialFadeInWhenVisible(".project-landing-text", ".fade-slide-up-s", 200);
+
+
 

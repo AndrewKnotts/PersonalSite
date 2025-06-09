@@ -81,7 +81,12 @@ a {
   transition: opacity 0.3s ease;
 }
 
-
+.cursor-small,
+.cursor-large {
+  display: none; /* completely hidden at start */
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
   /*////////////////*/
 /* Button Styles */
 /*////////////////*/
@@ -216,6 +221,7 @@ a {
 .image-reveal-wrapper:hover .image-reveal {
   transform: scale(1.05);
 }
+
 
 
 

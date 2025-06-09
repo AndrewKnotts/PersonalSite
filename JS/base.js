@@ -149,7 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
       console.warn("Location lookup failed", err);
     });
 });
-
 const cursorSmall = document.querySelector(".cursor-small");
 const cursorLarge = document.querySelector(".cursor-large");
 
@@ -158,15 +157,28 @@ let mouseX = 0,
 let largeX = 0,
   largeY = 0;
 
+let hasMoved = false;
+
 document.addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
+
   cursorSmall.style.left = `${mouseX}px`;
   cursorSmall.style.top = `${mouseY}px`;
 
-  // Make sure cursors are visible again
-  cursorSmall.style.opacity = "1";
-  cursorLarge.style.opacity = "1";
+  if (!hasMoved) {
+    // Only on first move, show cursors
+    cursorSmall.style.display = "block";
+    cursorLarge.style.display = "block";
+
+    // Force a reflow so opacity transition happens
+    void cursorSmall.offsetWidth;
+
+    cursorSmall.style.opacity = "1";
+    cursorLarge.style.opacity = "1";
+
+    hasMoved = true;
+  }
 });
 
 function animate() {
@@ -178,7 +190,7 @@ function animate() {
 }
 animate();
 
-// Hide cursors when mouse leaves the window
+// Hide on mouse leave
 window.addEventListener("mouseout", (e) => {
   if (!e.relatedTarget && !e.toElement) {
     cursorSmall.style.opacity = "0";
@@ -186,7 +198,7 @@ window.addEventListener("mouseout", (e) => {
   }
 });
 
-// Hover effect on custom elements
+// Hover effect
 const hoverElements = document.querySelectorAll("[data-cursor-hover]");
 
 hoverElements.forEach((el) => {
@@ -199,6 +211,8 @@ hoverElements.forEach((el) => {
     cursorSmall.style.transform = "translate(-50%, -50%) scale(1)";
   });
 });
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Global stuff still runs immediately
