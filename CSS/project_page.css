@@ -123,6 +123,10 @@
   width: 100%;
 }
 
+.project-image-padded {
+  padding: 0rem 3vw
+}
+
 .project-page-link {
   padding: 1rem 0rem;
   display: flex;

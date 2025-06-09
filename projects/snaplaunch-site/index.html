@@ -1,14 +1,12 @@
 <!-- HOME PAGE -->
 
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Andrew Knotts</title>
-    <link rel="stylesheet" href="../../CSS/homepage.css" />
+    <link rel="stylesheet" href="../../CSS/project_page.css" />
     <link rel="stylesheet" href="../../CSS/styles.css" />
     <!-- Inter font: All weights and styles -->
     <link
@@ -42,6 +40,13 @@
       href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="cursor cursor-small"></div>
@@ -51,21 +56,46 @@
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
     <!-- HEADER -->
     <header class="site-header">
-      <div class="header-left">
-        <a href="/" class="nav-link">ANDREW KNOTTS</a>
-      </div>
-      <nav class="header-nav"></nav>
-      <nav class="header-nav">
-        <a href="/projects" class="nav-link" data-cursor-hover>PROJECTS</a>
-        <a href="/about" class="nav-link" data-cursor-hover>ABOUT</a>
-        <a href="#resume" class="nav-link" data-cursor-hover>RESUME</a>
-      </nav>
-      <div class="header-right">
-        <a href="#" class="nav-link" data-cursor-hover id="contact-link"
-          >CONTACT</a
-        >
+      <div class="site-header-container">
+        <div class="header-left">
+          <a href="/" class="nav-link">ANDREW KNOTTS</a>
+        </div>
+        <nav class="header-nav"></nav>
+        <nav class="header-nav">
+          <a href="/projects" class="nav-link" data-cursor-hover>PROJECTS</a>
+          <a href="/about" class="nav-link" data-cursor-hover>ABOUT</a>
+          <a
+            href="../../assets/Andrew_Knotts_Resume_2025_June.pdf"
+            class="nav-link"
+            data-cursor-hover
+            >RESUME</a
+          >
+        </nav>
+        <div class="header-right">
+          <a href="#" class="nav-link" data-cursor-hover id="contact-link"
+            >CONTACT</a
+          >
+        </div>
       </div>
     </header>
+
+    <header class="mobile-header">
+      <div class="mobile-header-container">
+        <div class="mobile-header-top">
+          <a href="/" class="nav-link">ANDREW KNOTTS</a>
+          <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu">
+            <span class="line line-top"></span>
+            <span class="line line-bottom"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="/projects" class="nav-link">PROJECTS</a>
+      <a href="/about" class="nav-link">ABOUT</a>
+      <a href="#resume" class="nav-link">RESUME</a>
+      <a href="#" class="nav-link" id="contact-link">CONTACT</a>
+    </nav>
 
     <!-- LINE OVERLAY -->
 
@@ -89,12 +119,16 @@
         <div class="status-group">
           <span id="location" class="location"></span> <span id="clock"></span>
         </div>
-        <div class="status-group">
+        <div class="status-group status-group-2">
           <span id="time-spent"></span>
           <div class="bottom-link">
-            <a  data-cursor-hover class="bottom-link" href="" >LINKEDIN</a>
+            <a
+              data-cursor-hover
+              class="bottom-link"
+              href="https://www.linkedin.com/in/knottsandrew/"
+              >LINKEDIN</a
+            >
           </div>
-       
         </div>
       </div>
     </div>
@@ -105,7 +139,13 @@
       class="scroll-to-top"
       onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
     >
-      <svg  data-cursor-hover class="arrow-up " viewBox="0 0 183 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        data-cursor-hover
+        class="arrow-up"
+        viewBox="0 0 183 180"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="M8.76849 99.5L91.5 16.7686L174.231 99.5"
           stroke="white"
@@ -119,209 +159,229 @@
       </svg>
     </div>
 
-      
     <!-- MAIN CONTENT -->
 
     <main class="main-content">
       <!-- LANDING CONTENT -->
-      <section class="landing-section section-dark">
-        <!-- <div class="home-big-name" data-cursor-hover>ANDREW</div> -->
-        <!-- <div class="home-big-name" data-cursor-hover>KNOTTS</div> -->
-        <!-- <div class="home-big-name" data-cursor-hover>KNOTTS</div> -->
-         <div class="landing-header">
-          <div class="home-big-name">
-            <img class="home-big-name-solid" src="assets\name_solid.svg" alt="">
-            <img id="name-move-down" class="home-big-name-outline" src="assets\name_outline.svg" alt="">
-            <img id="name-move-down-slow" class="home-big-name-outline" src="assets\name_outline.svg" alt="">
-           
+      <section class="project-section section-dark">
+        <div class="project-landing">
+          <div class="project-landing-text">
+            <div class="project-landing-label"></div>
+            <div class="project-landing-header">
+              <div class="project-landing-title fade-slide-up-s">
+                snaplaunch Website
+              </div>
+              <div class="project-landing-summary fade-slide-up-s">
+                A playful, branded one-page marketing site designed and
+                developed to introduce Snaplaunch — an AI agent platform —
+                through clear visuals, dynamic interaction, and an approachable,
+                tech-forward identity.
+              </div>
+              <a
+                class="project-page-link fade-slide-up-s"
+                href="https://snaplaunch.ai/"
+                >Go to website
+                <svg
+                  class="arrow-right-button"
+                  width="138"
+                  height="137"
+                  viewBox="0 0 138 137"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M137.5 128.5H114.5V39.2637L17.1318 136.632L0.868164 120.368L98.2363 23H9V0H137.5V128.5Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="project-details">
+              <div class="project-details-row fade-slide-up-s">
+                <div class="project-details-text">YEAR</div>
+                <div class="project-details-text-right">2025</div>
+              </div>
+              <div class="project-details-row fade-slide-up-s">
+                <div class="project-details-text">COMPANY</div>
+                <div class="project-details-text-right">ERANOVA</div>
+              </div>
+              <div class="project-details-row fade-slide-up-s">
+                <div class="project-details-text">SCOPE</div>
+                <div class="project-details-text-right">
+                  BRAND IDENTITY, UI/UX DESIGN, FRONTEND DEVELOPMENT
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="grid-container">
-            <div class="grid-wrapper" id="pixelGrid"></div>
-          </div>
-          
-
-         </div>
-        
-    
-
-
-        <div class="landing-row">
-          <div class="landing-about fade-slide-up" data-delay=".0s">
-            Hello there — I'm Katherine, an agile designer hopping <br />across
-            digital and physical worlds. Currently creating <br />impactful
-            visual experiences @ TGC EG
-          </div>
-          <div class="landing-scroll-button">
-            <div
-              id="scroll-to-projects"
-              class="styled-button fade-slide-up"
-              data-delay=".2s"
-              data-cursor-hover
-            >
-              SCROLL TO EXPLORE
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects-section" class="sp-section section-dark">
-        <div class="sp-header reveal-wrapper">
-          <div class="slide-up-reveal-inner" data-delay="0.2s">
-            SELECTED<br />
-            PROJECTS
-          </div>
-        </div>
-
-        <div class="sp-row">
-          <a href="/projects/snaplaunch-site" class="sp-card-large" data-cursor-hover>
-            <div
-              class="sp-card-image-container image-reveal-wrapper"
-              data-delay="0.3s"
-            >
-              <img
-                class="sp-card-image image-reveal"
-                src="assets/example.png"
-                alt=""
-              />
-            </div>
-
-            <div class="sp-caption reveal-wrapper">
-              <div
-                class="sp-caption-left slide-up-reveal-inner"
-                data-delay=".4s"
-              >
-                TITLE OF THING
-              </div>
-              <div
-                class="sp-caption-right slide-up-reveal-inner"
-                data-delay=".7s"
-              >
-                CATEGORY
-              </div>
-            </div>
-          </a>
-          <a class="sp-card-small" data-cursor-hover>
-            <div
-              class="sp-card-image-container image-reveal-wrapper"
-              data-delay="0.3s"
-            >
-              <img
-                class="sp-card-image image-reveal"
-                src="assets/example.png"
-                alt=""
-              />
-            </div>
-
-            <div class="sp-caption reveal-wrapper">
-              <div
-                class="sp-caption-left slide-up-reveal-inner"
-                data-delay=".4s"
-              >
-                TITLE OF THING
-              </div>
-              <div
-                class="sp-caption-right slide-up-reveal-inner"
-                data-delay=".7s"
-              >
-                CATEGORY
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="sp-row">
-          <a class="sp-card-large" data-cursor-hover>
-            <div
-              class="sp-card-image-container image-reveal-wrapper"
-              data-delay="0.3s"
-            >
-              <img
-                class="sp-card-image image-reveal"
-                src="assets/example.png"
-                alt=""
-              />
-            </div>
-
-            <div class="sp-caption reveal-wrapper">
-              <div
-                class="sp-caption-left slide-up-reveal-inner"
-                data-delay=".4s"
-              >
-                TITLE OF THING
-              </div>
-              <div
-                class="sp-caption-right slide-up-reveal-inner"
-                data-delay=".7s"
-              >
-                CATEGORY
-              </div>
-            </div>
-          </a>
-          <a class="sp-card-small" data-cursor-hover>
-            <div
-              class="sp-card-image-container image-reveal-wrapper"
-              data-delay="0.3s"
-            >
-              <img
-                class="sp-card-image image-reveal"
-                src="assets/example.png"
-                alt=""
-              />
-            </div>
-
-            <div class="sp-caption reveal-wrapper">
-              <div
-                class="sp-caption-left slide-up-reveal-inner"
-                data-delay=".4s"
-              >
-                TITLE OF THING
-              </div>
-              <div
-                class="sp-caption-right slide-up-reveal-inner"
-                data-delay=".7s"
-              >
-                CATEGORY
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="projects-button">
-          <div class="styled-button fade-slide-up" data-cursor-hover>
-            SCROLL TO EXPLORE
+          <div class="project-landing-image-container image-reveal-wrapper">
+            <img
+              class="project-landing-image image-reveal"
+              src="../../assets/images/snaplaunch_web/SL_WEB_img_1.png"
+              alt=""
+            />
           </div>
         </div>
-      </section>
 
-      <section class="about-section section-dark">
-        <div class="about-row">
-          <div class="about-title">ABOUT ME</div>
-          <div class="about-desc">
-            I approach all things design with a distinct blend of play and
-            minimalism, seamlessly navigating design challenges and delivering
-            functional + delightful solutions.
+        <div class="project-text-section">
+          <div class="project-text-title">Overview</div>
+          <div class="project-text-paragraph">
+            I designed and developed the Snaplaunch marketing website from the
+            ground up, handling everything from brand direction and UI design to
+            full frontend implementation. The goal was to introduce Snaplaunch
+            in a way that felt intuitive, inviting, and visually alive, with a
+            tone that balanced credibility and creativity. The site uses a
+            consistent visual system of spirals, gradients, and clean
+            typography, anchored in a vibrant purplish-pink palette.
+            Microinteractions, scroll-based animations, and chat modals help
+            bring the product to life on the page, while reinforcing its
+            flexibility and ease of use.
           </div>
         </div>
-        <div class="about-button">
-          <div class="styled-button" data-cursor-hover>SCROLL TO EXPLORE</div>
+
+        <div class="project-image-section">
+          <img
+            class="project-image project-image-padded"
+            src="../../assets/images/snaplaunch_web/SL_WEB_img_2.png"
+            alt=""
+          />
+        </div>
+
+        <div class="project-text-section">
+          <div class="project-text-title">Problem</div>
+          <div class="project-text-paragraph">
+            We needed a site that clearly communicates what Snaplaunch is, how
+            it works, and why it matters, all while establishing trust and
+            giving users a preview of the actual product experience — without
+            making it feel dry or overly technical.
+          </div>
+        </div>
+
+        <div class="project-image-section">
+          <img
+            class="project-image project-image-padded"
+            src="../../assets/images/snaplaunch_web/SL_WEB_img_3.png"
+            alt=""
+          />
+        </div>
+
+        <div class="project-image-section">
+          <img
+            class="project-image project-image-padded"
+            src="../../assets/images/snaplaunch_web/SL_WEB_img_4.png"
+            alt=""
+          />
+        </div>
+
+        <div class="project-text-section">
+          <div class="project-text-title">Design & Engineering Process</div>
+          <div class="project-text-paragraph">
+            Created initial wireframes and layout flows in Figma, emphasizing a
+            friendly and clear visual hierarchy. Built the structure around
+            three simple steps: Brand, Train, and Launch — each illustrated with
+            custom animations. Designed looping examples of real chat agents in
+            action using mockups and an animated carousel. Integrated animated
+            transitions and scroll-triggered effects to guide users through the
+            page in a fluid, engaging way. Focused on giving the site
+            personality while keeping the design minimal and
+            mobile-friendly.Developed the full frontend solo using HTML, CSS,
+            and JavaScript. Built interactive UI components, including animated
+            modals, scrolling effects, and custom carousels. Ensured full
+            responsive behavior and optimized performance across devices.
+            Structured the codebase for easy updates as the product and brand
+            continue to evolve.
+          </div>
+        </div>
+
+        <div class="project-image-section">
+          <img
+            class="project-image project-image-padded"
+            src="../../assets/images/snaplaunch_web/SL_WEB_img_5.png"
+            alt=""
+          />
+        </div>
+
+        <div class="project-text-section">
+          <div class="project-text-title">Outcome</div>
+          <div class="project-text-paragraph">
+            The site is now live and serves as Snaplaunch’s main landing page. It’s already helped convert early users by making the product feel clear, modern, and easy to understand. The combination of expressive branding and interactive storytelling helps position Snaplaunch as an accessible, well-crafted AI platform — and the site continues to grow as we refine the product’s messaging.
+          </div>
+        </div>
+
+        <div class="prev-next-container">
+          <a class="next-button" href="">prev</a>
+          <a class="next-button" href="">next</a>
         </div>
       </section>
     </main>
     <div id="contact-section" class="contact-section-space"></div>
 
     <section class="contact-section">
-      <div class="contact-text-other">other text here</div>
+      <div class="reveal-wrapper">
+        <div class="slide-up-reveal-inner contact-text-other not-ready">
+          Have an idea?
+        </div>
+      </div>
       <div class="contact-text">
-        LET’S CREATE<br />
-        GREAT THINGS together.
+        <div class="contact-word reveal-wrapper">
+          <div
+            class="contact-word slide-up-reveal-inner not-ready"
+            data-delay="0.2s"
+          >
+            let's
+          </div>
+          <div
+            class="contact-word slide-up-reveal-inner not-ready"
+            data-delay="0.3s"
+          >
+            MAke
+          </div>
+        </div>
+        <div class="contact-word reveal-wrapper">
+          <div
+            class="contact-word slide-up-reveal-inner not-ready"
+            data-delay="0.4s"
+          >
+            soMetHing
+          </div>
+          <div
+            class="contact-word slide-up-reveal-inner not-ready"
+            data-delay="0.5s"
+          >
+            HAppen
+          </div>
+        </div>
       </div>
       <div class="contact-button">
-        <div class="styled-button-dark" data-cursor-hover>
-          SCROLL TO EXPLORE
+        <div
+          class="styled-button-container-dark fade-slide-up not-ready"
+          data-delay=".7s"
+        >
+          <a
+            href="mailto:knottsan2010@gmail.com "
+            class="styled-button-dark"
+            data-cursor-hover
+          >
+            KNOTTSAN2010@GMAIL.COM
+
+            <svg
+              class="arrow-right-button"
+              width="138"
+              height="137"
+              viewBox="0 0 138 137"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M137.5 128.5H114.5V39.2637L17.1318 136.632L0.868164 120.368L98.2363 23H9V0H137.5V128.5Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
   </body>
   <script src="../../JS/homepage.js"></script>
   <script src="../../JS/base.js"></script>
+  <script src="../../JS/about.js"></script>
 </html>
