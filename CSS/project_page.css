@@ -115,7 +115,7 @@
   width: 100%;
   max-width: 1440px;
   display: flex;
-  z-index: 10;
+  z-index: 5;
   padding: 3rem 0rem;
 }
 
@@ -124,7 +124,7 @@
 }
 
 .project-image-padded {
-  padding: 0rem 3vw
+  padding: 0rem 14vw
 }
 
 .project-page-link {

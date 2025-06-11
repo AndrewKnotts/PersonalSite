@@ -78,15 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document
-  .getElementById("contact-link")
-  .addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the anchor's default behavior
-    const contactSection = document.getElementById("contact-section");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  });
+
 
 const grid = document.getElementById("pixelGrid");
 const cols = 4,
@@ -134,3 +126,7 @@ setInterval(() => {
       observer.observe(section);
     }
   });
+
+
+
+

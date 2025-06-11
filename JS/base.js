@@ -253,35 +253,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   
-// profile pic effect
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    const imageContainer = document.getElementById('profile_pic_container');
-    const image = document.getElementById('profile_image');
-    
-    // Define the image sources
-    const initialImageSrc = '../assets/AnimatedGraphics/Profile_sprite_default2.gif'
-    const hoverImageSrc = '../assets/AnimatedGraphics/Profile_sprite_hover.png';
-    const clickImageSrc = '../assets/AnimatedGraphics/Profile_sprite_click.png';
-    
-    // Change image on hover
-    imageContainer.addEventListener('mouseover', () => {
-        image.src = hoverImageSrc;
-    });
 
-    // Revert image when not hovering
-    imageContainer.addEventListener('mouseout', () => {
-        image.src = initialImageSrc;
-    });
 
-   // Change image on click
-    imageContainer.addEventListener('click', () => {
-        image.src = clickImageSrc;
-        
-        // Revert image after 1 second
-        setTimeout(() => {
-            image.src = initialImageSrc;
-        }, 1000);
-    });
-});
 
+document
+  .getElementById("contact-link")
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the anchor's default behavior
+    const contactSection = document.getElementById("contact-section");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  });

@@ -1,0 +1,252 @@
+<!-- HOME PAGE -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andrew Knotts</title>
+    <link rel="stylesheet" href="../../CSS/project_page.css" />
+    <link rel="stylesheet" href="../../CSS/styles.css" />
+    <!-- Inter font: All weights and styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/PS_favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/PS_favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/PS_favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/PS_favicons/site.webmanifest" />
+
+    <!-- Cool Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="cursor cursor-small"></div>
+    <div class="cursor cursor-large"></div>
+
+    <!-- P5JS -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="site-header-container">
+        <div class="header-left">
+          <a href="/" class="nav-link">ANDREW KNOTTS</a>
+        </div>
+        <nav class="header-nav"></nav>
+        <nav class="header-nav">
+          <a href="/projects" class="nav-link" data-cursor-hover>PROJECTS</a>
+          <a href="/about" class="nav-link" data-cursor-hover>ABOUT</a>
+          <a href="../../assets/Andrew_Knotts_Resume_2025_June.pdf" class="nav-link" data-cursor-hover>RESUME</a>
+        </nav>
+        <div class="header-right">
+          <a href="#" class="nav-link" data-cursor-hover id="contact-link">CONTACT</a>
+        </div>
+      </div>
+    </header>
+
+    <header class="mobile-header">
+      <div class="mobile-header-container">
+        <div class="mobile-header-top">
+          <a href="/" class="nav-link">ANDREW KNOTTS</a>
+          <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu">
+            <span class="line line-top"></span>
+            <span class="line line-bottom"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="/projects" class="nav-link">PROJECTS</a>
+      <a href="/about" class="nav-link">ABOUT</a>
+      <a href="#resume" class="nav-link">RESUME</a>
+      <a href="#" class="nav-link" id="contact-link">CONTACT</a>
+    </nav>
+
+    <!-- LINE OVERLAY -->
+
+    <div class="line-overlay">
+      <div class="line-overlay-section"></div>
+      <div class="line-overlay-section"></div>
+      <div class="line-overlay-section"></div>
+      <div class="line-overlay-section"></div>
+    </div>
+    <div class="line-overlay2">
+      <div class="line-overlay-section2"></div>
+      <div class="line-overlay-section2"></div>
+      <div class="line-overlay-section2"></div>
+      <div class="line-overlay-section2"></div>
+    </div>
+
+    <!-- STATUS VARS -->
+
+    <div id="ambient-status" class="ambient-status">
+      <div class="ambient-status-elements">
+        <div class="status-group"><span id="location" class="location"></span> <span id="clock"></span></div>
+        <div class="status-group status-group-2">
+          <span id="time-spent"></span>
+          <div class="bottom-link">
+            <a data-cursor-hover class="bottom-link" href="https://www.linkedin.com/in/knottsandrew/">LINKEDIN</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCROLL TO TOP -->
+
+    <div class="scroll-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+      <svg data-cursor-hover class="arrow-up" viewBox="0 0 183 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.76849 99.5L91.5 16.7686L174.231 99.5" stroke="white" stroke-width="23" />
+        <path d="M8.76849 171.731L91.5 89L174.231 171.731" stroke="white" stroke-width="23" />
+      </svg>
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+      <!-- LANDING CONTENT -->
+      <section class="project-section section-dark">
+        <div class="project-landing">
+          <div class="project-landing-text">
+            <div class="project-landing-label"></div>
+            <div class="project-landing-header">
+              <div class="project-landing-title fade-slide-up-s">Eranova Website</div>
+              <div class="project-landing-summary fade-slide-up-s">
+                A full rebrand and interactive web experience for Eranova — an AI company focused on automating complex enterprise workflows. I led
+                the design and frontend build, creating a bold visual identity and high-performance site that introduces the platform with clarity and
+                personality.
+              </div>
+              <a class="project-page-link fade-slide-up-s" href="https://eranova.ai/"
+                >Go to website
+                <svg class="arrow-right-button" width="138" height="137" viewBox="0 0 138 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M137.5 128.5H114.5V39.2637L17.1318 136.632L0.868164 120.368L98.2363 23H9V0H137.5V128.5Z" fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+            <div class="project-details">
+              <div class="project-details-row fade-slide-up-s">
+                <div class="project-details-text">YEAR</div>
+                <div class="project-details-text-right">2025</div>
+              </div>
+              <div class="project-details-row fade-slide-up-s">
+                <div class="project-details-text">COMPANY</div>
+                <div class="project-details-text-right">ERANOVA</div>
+              </div>
+              <div class="project-details-row fade-slide-up-s">
+                <div class="project-details-text">SCOPE</div>
+                <div class="project-details-text-right">BRAND IDENTITY, UI/UX DESIGN, FRONTEND DEVELOPMENT</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-landing-image-container image-reveal-wrapper">
+            <img class="project-landing-image image-reveal" src="../../assets/images/eranova_web/EN_WEB_img_1_1.png" alt="" />
+          </div>
+        </div>
+
+        <div class="project-text-section">
+          <div class="project-text-title">Overview</div>
+          <div class="project-text-paragraph">
+            I redesigned Eranova’s brand and website from the ground up, handling everything from visual identity and UI design to frontend
+            engineering and site architecture. The goal was to communicate the company’s cutting-edge AI technology in a way that felt credible,
+            modern, and distinctly memorable. The final result is a fast, fully responsive marketing site with interactive visuals, microinteractions,
+            and a strong design language that runs consistently across every page and component.
+          </div>
+        </div>
+
+        <div class="project-image-section">
+          <img class="project-image project-image-padded" src="../../assets/images/eranova_web/EN_WEB_img_2.png" alt="" />
+        </div>
+
+        <div class="project-text-section">
+          <div class="project-text-title">Problem</div>
+          <div class="project-text-paragraph">
+            Eranova needed a site that could reflect the technical sophistication of its AI platform — while still being approachable to enterprise
+            clients unfamiliar with the underlying systems. The previous site felt generic and underdeveloped. I was tasked with building something
+            that established brand trust, communicated value quickly, and could scale with new content and use cases.
+          </div>
+        </div>
+
+        <div class="project-image-section">
+          <img class="project-image project-image-padded" src="../../assets/images/eranova_web/EN_WEB_img_3.png" alt="" />
+        </div>
+
+        <div class="project-image-section">
+          <img class="project-image" src="../../assets/images/eranova_web/EN_WEB_img_4.png" alt="" />
+        </div>
+
+        <div class="project-image-section">
+          <img class="project-image" src="../../assets/images/eranova_web/EN_WEB_img_5.png" alt="" />
+        </div>
+
+        <div class="project-text-section">
+          <div class="project-text-title">Brand & Visual Design</div>
+          <div class="project-text-paragraph">
+            I created a full brand system rooted in a “dark tech” aesthetic — combining clarity with modularity, to reflect the way Eranova builds
+            adaptable, agent-based tools. Logo: A custom geometric mark with rounded cuts, echoing the feel of plug-and-play AI systems. Typography &
+            Color: Stark contrast between dark backgrounds and vivid neon accents — designed for both drama and legibility. Icons & Graphics: Built a
+            custom icon set and illustration style that match the modular, slightly playful tone of the brand. Design System: Developed a full visual
+            framework in Figma for reusable layouts, grid structures, spacing, and component styling.
+          </div>
+        </div>
+
+        <div class="project-image-section">
+          <img class="project-image" src="../../assets/images/eranova_web/EN_WEB_img_6.png" alt="" />
+        </div>
+
+        <div class="project-text-section">
+          <div class="project-text-title">Outcome</div>
+          <div class="project-text-paragraph">
+            The site redefined Eranova’s online presence. It functions as both a product overview and a brand statement, helping position the company
+            as innovative and credible in the competitive AI space. Internally, it’s made collaboration easier — with modular components and CMS
+            flexibility — and externally, it’s played a key role in investor, hiring, and client-facing interactions.
+          </div>
+        </div>
+
+        <div class="video-container">
+          <div class="video-wrapper">
+            <video class="smart-video" src="../../assets/images/eranova_web/EN_WEB_VIDEO.mp4" playsinline muted preload="metadata"></video>
+          </div>
+        </div>
+
+        <div class="prev-next-container">
+          <a class="next-button" href="">prev</a>
+          <a class="next-button" href="">next</a>
+        </div>
+      </section>
+    </main>
+    <div id="contact-section" class="contact-section-space"></div>
+
+    <section class="contact-section">
+      <div class="reveal-wrapper">
+        <div class="slide-up-reveal-inner contact-text-other not-ready">Have an idea?</div>
+      </div>
+      <div class="contact-text">
+        <div class="contact-word reveal-wrapper">
+          <div class="contact-word slide-up-reveal-inner not-ready" data-delay="0.2s">let's</div>
+          <div class="contact-word slide-up-reveal-inner not-ready" data-delay="0.3s">MAke</div>
+        </div>
+        <div class="contact-word reveal-wrapper">
+          <div class="contact-word slide-up-reveal-inner not-ready" data-delay="0.4s">soMetHing</div>
+          <div class="contact-word slide-up-reveal-inner not-ready" data-delay="0.5s">HAppen</div>
+        </div>
+      </div>
+      <div class="contact-button">
+        <div class="styled-button-container-dark fade-slide-up not-ready" data-delay=".7s">
+          <a href="mailto:knottsan2010@gmail.com " class="styled-button-dark" data-cursor-hover>
+            KNOTTSAN2010@GMAIL.COM
+
+            <svg class="arrow-right-button" width="138" height="137" viewBox="0 0 138 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M137.5 128.5H114.5V39.2637L17.1318 136.632L0.868164 120.368L98.2363 23H9V0H137.5V128.5Z" fill="currentColor" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="../../JS/base.js"></script>
+  <script src="../../JS/project_page.js"></script>
+</html>
