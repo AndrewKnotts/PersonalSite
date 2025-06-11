@@ -155,6 +155,11 @@
   transition: color 0.3s ease;
 }
 
+.inactive{
+  pointer-events: none;
+  opacity: .5;
+}
+
 .next-button::after {
   content: "";
   position: absolute;
@@ -186,6 +191,10 @@
 }
 
 @media (max-width: 860px) {
+
+.project-image-padded {
+  padding: 0rem 0rem
+}
   .project-landing {
     flex-direction: column;
     gap: 5rem;
