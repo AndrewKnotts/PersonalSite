@@ -420,6 +420,93 @@ a {
 }
 
 /*////////////////*/
+/* Loader Overlay */
+/*////////////////*/
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: transform 1s ease-in-out;
+}
+
+.loader-text {
+  display: flex;
+  gap: 0.1em;
+  font-size: 2rem;
+  font-family: "Major Mono Display", monospace;
+}
+
+.loader-text span {
+  opacity: 0;
+  transform: translateY(0.5em);
+  animation: waveIn 0.6s ease-out forwards;
+}
+
+@keyframes waveIn {
+  0% {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-0.2em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered delay */
+.loader-text span:nth-child(1) { animation-delay: 0s; }
+.loader-text span:nth-child(2) { animation-delay: 0.1s; }
+.loader-text span:nth-child(3) { animation-delay: 0.2s; }
+.loader-text span:nth-child(4) { animation-delay: 0.3s; }
+.loader-text span:nth-child(5) { animation-delay: 0.4s; }
+.loader-text span:nth-child(6) { animation-delay: 0.5s; }
+.loader-text span:nth-child(7) { animation-delay: 0.6s; }
+.loader-text span:nth-child(8) { animation-delay: 0.7s; }
+.loader-text span:nth-child(9) { animation-delay: 0.8s; }
+.loader-text span:nth-child(10) { animation-delay: 0.9s; }
+@keyframes peckii {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+    25% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+/* Slide overlay off screen when loaded */
+.loader-overlay.hide {
+  transform: translateY(-100%);
+}
+
+
+.pecki-image {
+  width: 128px; /* 32 × 4 scale, or 64px for 2x, etc. */
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; /* fallback for some browsers */
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  animation: peckii 1.5s ease-out forwards;
+}
+
+
+/*////////////////*/
 /* Line Overlay */
 /*////////////////*/
 
@@ -625,7 +712,7 @@ svg {
   justify-content: center;
   width: 100%;
   max-width: 1440px;
-  padding: 5rem;
+  padding: 5rem 10rem;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
@@ -650,6 +737,11 @@ font-size: 1rem;
   height: 100%;
   object-fit: cover;
   display: block;
+  pointer-events: none;
+}
+
+
+.no-controls {
   pointer-events: none;
 }
 
@@ -704,6 +796,11 @@ font-size: 1rem;
 
   .ambient-status-elements {
     width: 100%;
+  }
+
+  .video-container{
+    padding: 0;
+    padding-bottom: 2rem;
   }
 }
 

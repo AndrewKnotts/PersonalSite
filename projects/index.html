@@ -15,7 +15,7 @@
     <!-- Cool Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div class="cursor cursor-small"></div>
@@ -33,13 +33,32 @@
         <nav class="header-nav">
           <a href="/projects" class="nav-link" data-cursor-hover>PROJECTS</a>
           <a href="/about" class="nav-link" data-cursor-hover>ABOUT</a>
-          <a href="#resume" class="nav-link" data-cursor-hover>RESUME</a>
+          <a href="../assets/Andrew_Knotts_Resume_2025_June.pdf" class="nav-link" data-cursor-hover>RESUME</a>
         </nav>
         <div class="header-right">
           <a href="#" class="nav-link" data-cursor-hover id="contact-link">CONTACT</a>
         </div>
       </div>
     </header>
+
+    <header class="mobile-header">
+      <div class="mobile-header-container">
+        <div class="mobile-header-top">
+          <a href="/" class="nav-link">ANDREW KNOTTS</a>
+          <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu">
+            <span class="line line-top"></span>
+            <span class="line line-bottom"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="/projects" class="nav-link">PROJECTS</a>
+      <a href="/about" class="nav-link">ABOUT</a>
+      <a href="../assets/Andrew_Knotts_Resume_2025_June.pdf" class="nav-link">RESUME</a>
+      <a href="#" class="nav-link" id="contact-link-2">CONTACT</a>
+      <a href="https://www.linkedin.com/in/knottsandrew/" class="nav-link">LINKEDIN</a>
+    </nav>
 
     <!-- LINE OVERLAY -->
 
@@ -64,7 +83,7 @@
         <div class="status-group">
           <span id="time-spent"></span>
           <div class="bottom-link">
-            <a data-cursor-hover class="bottom-link" href="">LINKEDIN</a>
+            <a data-cursor-hover class="bottom-link" href="https://www.linkedin.com/in/knottsandrew/">LINKEDIN</a>
           </div>
         </div>
       </div>
@@ -85,9 +104,9 @@
       <!-- LANDING CONTENT -->
       <section class="all-projects-section section-dark">
         <div class="projects-header reveal-wrapper">
-          <div class="slide-up-reveal-inner" data-delay="0.2s">
-            SELECTED<br />
-            PROJECTS
+          <div class="slide-up-reveal-inner projects-title" data-delay="0s">
+            Selected<br />
+            Work
           </div>
         </div>
 
@@ -120,7 +139,7 @@
 
           <a href="/projects/eranova-application/" class="project-row" data-cursor-hover>
             <div class="project-title">ERANOVA APPLICATION</div>
-            <div class="project-desc">UI/UX DESIGN, FULL STACK ENGINEERING</div>
+            <div class="project-desc">SOFTWARE ENGINEERING, UI/UX DESIGN</div>
             <div class="project-img-container">
               <img class="project-img" src="../assets/images/eranova_app/EN_APP_img_2.png" alt="" />
             </div>
@@ -143,19 +162,61 @@
               <img class="project-icon-outline2" src="../assets/icons/arrow_outline.svg" alt="" />
             </div>
           </a>
+
+          <a href="/projects/graphic-design/" class="project-row" data-cursor-hover>
+            <div class="project-title">MARKETING & DESIGN</div>
+            <div class="project-desc">BRANDING, GRAPHICS, MARKETING</div>
+            <div class="project-img-container">
+              <img class="project-img" src="../assets/images/graphics/G_img_cover.png" alt="" />
+            </div>
+            <div class="project-icon">
+              <img class="project-icon-fill" src="../assets/icons/arrow_fill.svg" alt="" />
+              <img class="project-icon-outline1" src="../assets/icons/arrow_outline.svg" alt="" />
+              <img class="project-icon-outline2" src="../assets/icons/arrow_outline.svg" alt="" />
+            </div>
+          </a>
+
+          <a href="/projects/video-game/" class="project-row" data-cursor-hover>
+            <div class="project-title">AZURE SENSE</div>
+            <div class="project-desc">GAME DESIGN, GAME DEV</div>
+            <div class="project-img-container">
+              <img class="project-img" src="../assets/images/game/Game_img_cover.png" alt="" />
+            </div>
+            <div class="project-icon">
+              <img class="project-icon-fill" src="../assets/icons/arrow_fill.svg" alt="" />
+              <img class="project-icon-outline1" src="../assets/icons/arrow_outline.svg" alt="" />
+              <img class="project-icon-outline2" src="../assets/icons/arrow_outline.svg" alt="" />
+            </div>
+          </a>
         </div>
       </section>
     </main>
     <div id="contact-section" class="contact-section-space"></div>
 
     <section class="contact-section">
-      <div class="contact-text-other">other text here</div>
+      <div class="reveal-wrapper">
+        <div class="slide-up-reveal-inner contact-text-other not-ready">Have an idea?</div>
+      </div>
       <div class="contact-text">
-        LET’S CREATE<br />
-        GREAT THINGS together.
+        <div class="contact-word reveal-wrapper">
+          <div class="contact-word slide-up-reveal-inner not-ready" data-delay="0.2s">let's</div>
+          <div class="contact-word slide-up-reveal-inner not-ready" data-delay="0.3s">MAke</div>
+        </div>
+        <div class="contact-word reveal-wrapper">
+          <div class="contact-word slide-up-reveal-inner not-ready" data-delay="0.4s">soMetHing</div>
+          <div class="contact-word slide-up-reveal-inner not-ready" data-delay="0.5s">HAppen</div>
+        </div>
       </div>
       <div class="contact-button">
-        <div class="styled-button-dark" data-cursor-hover>SCROLL TO EXPLORE</div>
+        <div class="styled-button-container-dark fade-slide-up not-ready" data-delay=".7s">
+          <a href="mailto:knottsan2010@gmail.com " class="styled-button-dark" data-cursor-hover>
+            KNOTTSAN2010@GMAIL.COM
+
+            <svg class="arrow-right-button" width="138" height="137" viewBox="0 0 138 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M137.5 128.5H114.5V39.2637L17.1318 136.632L0.868164 120.368L98.2363 23H9V0H137.5V128.5Z" fill="currentColor" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   </body>

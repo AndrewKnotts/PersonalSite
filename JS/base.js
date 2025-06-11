@@ -149,6 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
       console.warn("Location lookup failed", err);
     });
 });
+
+
+
 const cursorSmall = document.querySelector(".cursor-small");
 const cursorLarge = document.querySelector(".cursor-large");
 
@@ -158,26 +161,48 @@ let largeX = 0,
   largeY = 0;
 
 let hasMoved = false;
+let isVisible = false;
 
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-
-  cursorSmall.style.left = `${mouseX}px`;
-  cursorSmall.style.top = `${mouseY}px`;
-
-  if (!hasMoved) {
-    // Only on first move, show cursors
+function showCursors() {
+  if (!isVisible) {
     cursorSmall.style.display = "block";
     cursorLarge.style.display = "block";
-
-    // Force a reflow so opacity transition happens
+    
+    // Force reflow
     void cursorSmall.offsetWidth;
-
+    void cursorLarge.offsetWidth;
+    
     cursorSmall.style.opacity = "1";
     cursorLarge.style.opacity = "1";
+    isVisible = true;
+  }
+}
 
+function hideCursors() {
+  if (isVisible) {
+    cursorSmall.style.opacity = "0";
+    cursorLarge.style.opacity = "0";
+    isVisible = false;
+  }
+}
+
+function updateCursorPosition(x, y) {
+  mouseX = x;
+  mouseY = y;
+  
+  cursorSmall.style.left = `${mouseX}px`;
+  cursorSmall.style.top = `${mouseY}px`;
+}
+
+window.addEventListener("mousemove", (e) => {
+  updateCursorPosition(e.clientX, e.clientY);
+  
+  if (!hasMoved) {
     hasMoved = true;
+  }
+  
+  if (hasMoved && !isVisible) {
+    showCursors();
   }
 });
 
@@ -190,11 +215,40 @@ function animate() {
 }
 animate();
 
-// Hide on mouse leave
-window.addEventListener("mouseout", (e) => {
-  if (!e.relatedTarget && !e.toElement) {
-    cursorSmall.style.opacity = "0";
-    cursorLarge.style.opacity = "0";
+// More reliable mouse leave detection
+document.addEventListener("mouseleave", (e) => {
+  // Check if mouse actually left the document
+  if (e.clientY <= 0 || e.clientX <= 0 || 
+      e.clientX >= window.innerWidth || 
+      e.clientY >= window.innerHeight) {
+    hideCursors();
+  }
+});
+
+// Mouse enter detection
+document.addEventListener("mouseenter", (e) => {
+  if (hasMoved) {
+    updateCursorPosition(e.clientX, e.clientY);
+    showCursors();
+  }
+});
+
+// Additional fallback for window focus events
+window.addEventListener("focus", () => {
+  if (hasMoved && !isVisible) {
+    showCursors();
+  }
+});
+
+// Visibility API fallback
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden && hasMoved && !isVisible) {
+    // Small delay to ensure proper state
+    setTimeout(() => {
+      if (!isVisible) {
+        showCursors();
+      }
+    }, 50);
   }
 });
 
@@ -203,16 +257,18 @@ const hoverElements = document.querySelectorAll("[data-cursor-hover]");
 
 hoverElements.forEach((el) => {
   el.addEventListener("mouseenter", () => {
-    cursorLarge.style.opacity = "0";
-    cursorSmall.style.transform = "translate(-50%, -50%) scale(3)";
+    if (isVisible) {
+      cursorLarge.style.opacity = "0";
+      cursorSmall.style.transform = "translate(-50%, -50%) scale(3)";
+    }
   });
   el.addEventListener("mouseleave", () => {
-    cursorLarge.style.opacity = "1";
-    cursorSmall.style.transform = "translate(-50%, -50%) scale(1)";
+    if (isVisible) {
+      cursorLarge.style.opacity = "1";
+      cursorSmall.style.transform = "translate(-50%, -50%) scale(1)";
+    }
   });
 });
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   // Global stuff still runs immediately
@@ -238,31 +294,55 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+const hamburgerBtn = document.getElementById("hamburger-btn");
+const mobileNav = document.getElementById("mobile-nav");
 
-
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const mobileNav = document.getElementById('mobile-nav');
-
-  hamburgerBtn.addEventListener('click', () => {
-    hamburgerBtn.classList.toggle('open');
-    mobileNav.classList.toggle('open');
+if (hamburgerBtn && mobileNav) {
+  hamburgerBtn.addEventListener("click", () => {
+    hamburgerBtn.classList.toggle("open");
+    mobileNav.classList.toggle("open");
   });
+}
+
+document.getElementById("contact-link").addEventListener("click", function (event) {
+  event.preventDefault(); // Prevent the anchor's default behavior
+  const contactSection = document.getElementById("contact-section");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+});
+
+document.getElementById("contact-link-2").addEventListener("click", function (event) {
+  event.preventDefault(); // Prevent the anchor's default behavior
+  const contactSection = document.getElementById("contact-section");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+     hamburgerBtn.click();
+  }
+});
 
 
 
 
 
-  
+//Loader Overlay
 
+window.addEventListener('load', () => {
+    const loaderOverlay = document.querySelector('.loader-overlay');
 
+    if (!sessionStorage.getItem('intro_shown')) {
+      // Mark it so it doesn't show again this session
+      sessionStorage.setItem('intro_shown', 'true');
 
-
-document
-  .getElementById("contact-link")
-  .addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the anchor's default behavior
-    const contactSection = document.getElementById("contact-section");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        loaderOverlay.classList.add('hide');
+        setTimeout(() => {
+          document.body.style.overflow = 'auto';
+        }, 1000);
+      }, 2000); // delay for animation
+    } else {
+      // Skip animation immediately
+      loaderOverlay.style.display = 'none';
+      document.body.style.overflow = 'auto';
     }
   });

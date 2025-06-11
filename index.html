@@ -2,30 +2,36 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Andrew Knotts</title>
-    <link rel="stylesheet" href="CSS/homepage.css" />
-    <link rel="stylesheet" href="CSS/styles.css" />
-    <!-- Inter font: All weights and styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrew Knotts</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/PS_favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/PS_favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/PS_favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/PS_favicons/site.webmanifest" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="CSS/homepage.css" />
+  <link rel="stylesheet" href="CSS/styles.css" />
 
-    <!-- Cool Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
-  </head>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="assets/PS_favicons/site.webmanifest" />
+</head>
   <body>
+    <div class="loader-overlay">
+      <div class="loader-text">
+        <span>l</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span><span>.</span><span>.</span><span>.</span>
+      </div>
+      <img class="pecki-image" src="assets/images/home/peckii_right.gif" alt="" />
+    </div>
+
     <div class="cursor cursor-small"></div>
     <div class="cursor cursor-large"></div>
 
@@ -35,7 +41,7 @@
     <header class="site-header">
       <div class="site-header-container">
         <div class="header-left">
-          <a href="/" class="nav-link">ANDREW KNOTTS</a>
+          <a href="/" class="nav-link" data-cursor-hover>ANDREW KNOTTS</a>
         </div>
         <nav class="header-nav"></nav>
         <nav class="header-nav">
@@ -58,15 +64,15 @@
             <span class="line line-bottom"></span>
           </button>
         </div>
-        
       </div>
     </header>
     <nav class="mobile-nav" id="mobile-nav">
-          <a href="/projects" class="nav-link">PROJECTS</a>
-          <a href="/about" class="nav-link">ABOUT</a>
-          <a href="#resume" class="nav-link">RESUME</a>
-          <a href="#" class="nav-link" id="contact-link">CONTACT</a>
-        </nav>
+      <a href="/projects" class="nav-link">PROJECTS</a>
+      <a href="/about" class="nav-link">ABOUT</a>
+      <a href="assets/Andrew_Knotts_Resume_2025_June.pdf" class="nav-link">RESUME</a>
+      <a href="#" class="nav-link" id="contact-link-2">CONTACT</a>
+      <a href="https://www.linkedin.com/in/knottsandrew/" class="nav-link">LINKEDIN</a>
+    </nav>
 
     <!-- LINE OVERLAY -->
 
@@ -163,7 +169,7 @@
               <div class="sp-caption-right slide-up-reveal-inner" data-delay=".7s">UI/UX DESIGN, SOFTWARE ENGINEERING</div>
             </div>
           </a>
-          <a  href="/projects/snaplaunch-site" class="sp-card-small" data-cursor-hover>
+          <a href="/projects/snaplaunch-site" class="sp-card-small" data-cursor-hover>
             <div class="sp-card-image-container image-reveal-wrapper" data-delay="0.1s">
               <img class="sp-card-image image-reveal" src="assets/images/snaplaunch_web/SL_WEB_img_cover.png" alt="" />
             </div>
@@ -205,8 +211,8 @@
             </div>
 
             <div class="sp-caption reveal-wrapper">
-              <div class="sp-caption-left slide-up-reveal-inner" data-delay=".4s">GRAPHIC DESIGN</div>
-              <div class="sp-caption-right slide-up-reveal-inner" data-delay=".7s">BRANDING, MOTION GRAPHICS, VISUAL COMMUNICATION</div>
+              <div class="sp-caption-left slide-up-reveal-inner" data-delay=".4s">MARKETING & DESIGN</div>
+              <div class="sp-caption-right slide-up-reveal-inner" data-delay=".7s">BRANDING, GRAPHICS, MARKETING</div>
             </div>
           </a>
           <a href="/projects/video-game/" class="sp-card-small" data-cursor-hover>

@@ -6,7 +6,11 @@
 
 .project-row-container {
   width: 100%;
-      padding: 10rem 0rem;
+  padding: 10rem 0rem;
+}
+
+.projects-title {
+  font-family: "Major Mono Display", monospace;
 }
 
 .projects-header {
@@ -63,7 +67,6 @@
   height: auto;
   transition: transform 0.5s ease;
   pointer-events: none;
-
 }
 
 .project-icon {
@@ -105,4 +108,34 @@
 .project-row:hover .project-icon-outline2 {
   padding-right: 2.5rem;
   opacity: 0.6;
+}
+
+@media (max-width: 860px) {
+  .project-row {
+    flex-direction: column;
+    height: unset;
+    border-bottom: none;
+    align-items: flex-start;
+    opacity: 1;
+    padding: 2rem 0rem;
+  }
+
+  .project-img-container {
+    opacity: 1;
+    width: 100%;
+    padding: 0;
+    padding-top: 1rem;
+  }
+
+  .project-title {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  .project-desc {
+    width: 100%;
+  }
+
+  .project-icon{
+    display: none;
+  }
 }
