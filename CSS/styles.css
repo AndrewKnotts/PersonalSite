@@ -466,22 +466,42 @@ a {
 }
 
 /* Staggered delay */
-.loader-text span:nth-child(1) { animation-delay: 0s; }
-.loader-text span:nth-child(2) { animation-delay: 0.1s; }
-.loader-text span:nth-child(3) { animation-delay: 0.2s; }
-.loader-text span:nth-child(4) { animation-delay: 0.3s; }
-.loader-text span:nth-child(5) { animation-delay: 0.4s; }
-.loader-text span:nth-child(6) { animation-delay: 0.5s; }
-.loader-text span:nth-child(7) { animation-delay: 0.6s; }
-.loader-text span:nth-child(8) { animation-delay: 0.7s; }
-.loader-text span:nth-child(9) { animation-delay: 0.8s; }
-.loader-text span:nth-child(10) { animation-delay: 0.9s; }
+.loader-text span:nth-child(1) {
+  animation-delay: 0s;
+}
+.loader-text span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.loader-text span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.loader-text span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.loader-text span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.loader-text span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.loader-text span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.loader-text span:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.loader-text span:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.loader-text span:nth-child(10) {
+  animation-delay: 0.9s;
+}
 @keyframes peckii {
   0% {
     transform: translateX(-200px);
     opacity: 0;
   }
-    25% {
+  25% {
     opacity: 1;
   }
   100% {
@@ -495,7 +515,6 @@ a {
   transform: translateY(-100%);
 }
 
-
 .pecki-image {
   width: 128px; /* 32 × 4 scale, or 64px for 2x, etc. */
   height: auto;
@@ -504,7 +523,6 @@ a {
   image-rendering: -moz-crisp-edges; /* Firefox */
   animation: peckii 1.5s ease-out forwards;
 }
-
 
 /*////////////////*/
 /* Line Overlay */
@@ -718,11 +736,9 @@ svg {
   gap: 1rem;
 }
 
-.video-title{
-font-size: 1rem;
+.video-title {
+  font-size: 1rem;
 }
-
-
 
 .video-wrapper {
   position: relative;
@@ -739,7 +755,6 @@ font-size: 1rem;
   display: block;
   pointer-events: none;
 }
-
 
 .no-controls {
   pointer-events: none;
@@ -766,6 +781,31 @@ font-size: 1rem;
 }
 
 @media (max-width: 860px) {
+  #ambient-status .location {
+    margin-left: 0;
+  }
+
+  .status-group {
+    font-size: 0.7rem;
+    font-weight: 300;
+    width: calc(100% - 2rem);
+    margin: 0rem 1rem;
+  }
+
+  .styled-button-dark {
+    padding: 1.5rem 0rem;
+    width: 100%;
+  }
+
+  .contact-button {
+    width: calc(100% - 2rem - 5px);
+    margin: 0rem 1rem;
+  }
+
+  .cursor-small,
+  .cursor-large {
+    display: none; /* completely hidden at start */
+  }
   .sp-row {
     flex-direction: column;
     gap: 3rem;
@@ -798,9 +838,10 @@ font-size: 1rem;
     width: 100%;
   }
 
-  .video-container{
+  .video-container {
     padding: 0;
     padding-bottom: 2rem;
+    padding-top: 2rem;
   }
 }
 

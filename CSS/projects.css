@@ -111,6 +111,14 @@
 }
 
 @media (max-width: 860px) {
+
+  .projects-title {
+    font-size: 15vw;
+  }
+
+  .project-row-container{
+        padding: 3rem 0rem;
+  }
   .project-row {
     flex-direction: column;
     height: unset;

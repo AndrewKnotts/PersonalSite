@@ -273,6 +273,10 @@ padding-left: 25%;
 
 
 @media (max-width: 860px) {
+
+  .sp-title{
+    font-size: 15vw;
+  }
 .sp-row{
   flex-direction: column;
   gap: 3rem;
@@ -292,6 +296,12 @@ padding-left: 25%;
 }
 
 .landing-about{
+          font-size: 3.8vw;
+          line-height: unset;
+}
+
+.about-button{
+  padding-left: 0;
 }
 
 

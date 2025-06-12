@@ -197,6 +197,11 @@
 
 @media (max-width: 860px) {
 
+  .project-landing-summary {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+  }
+
 .project-image-padded {
   padding: 0rem 0rem
 }
@@ -214,7 +219,7 @@
   }
 
   .project-landing-title{
-    font-size: 3.5rem;
+    font-size: 11vw;
   }
 
   .project-text-section{
@@ -225,11 +230,12 @@
   }
   .project-text-title{
     width: 100%;
-    padding: 1rem;
+    padding: 0rem;
   }
 
   .project-text-paragraph{
     width: 100%;
+    padding: 0;
   }
 
   .project-details-text-right{

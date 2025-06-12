@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const formatter = new Intl.DateTimeFormat([], {
       hour: "2-digit",
+      hour12: false,
       minute: "2-digit",
       second: "2-digit",
       timeZoneName: "short", // adds time zone abbreviation
@@ -151,125 +152,134 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Detect touch devices (mobile & tablet)
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-const cursorSmall = document.querySelector(".cursor-small");
-const cursorLarge = document.querySelector(".cursor-large");
+if (!isTouchDevice) {
+  const cursorSmall = document.querySelector(".cursor-small");
+  const cursorLarge = document.querySelector(".cursor-large");
 
-let mouseX = 0,
-  mouseY = 0;
-let largeX = 0,
-  largeY = 0;
+  let mouseX = 0,
+    mouseY = 0;
+  let largeX = 0,
+    largeY = 0;
 
-let hasMoved = false;
-let isVisible = false;
+  let hasMoved = false;
+  let isVisible = false;
 
-function showCursors() {
-  if (!isVisible) {
-    cursorSmall.style.display = "block";
-    cursorLarge.style.display = "block";
-    
-    // Force reflow
-    void cursorSmall.offsetWidth;
-    void cursorLarge.offsetWidth;
-    
-    cursorSmall.style.opacity = "1";
-    cursorLarge.style.opacity = "1";
-    isVisible = true;
-  }
-}
+  function showCursors() {
+    if (!isVisible) {
+      cursorSmall.style.display = "block";
+      cursorLarge.style.display = "block";
 
-function hideCursors() {
-  if (isVisible) {
-    cursorSmall.style.opacity = "0";
-    cursorLarge.style.opacity = "0";
-    isVisible = false;
-  }
-}
+      // Force reflow
+      void cursorSmall.offsetWidth;
+      void cursorLarge.offsetWidth;
 
-function updateCursorPosition(x, y) {
-  mouseX = x;
-  mouseY = y;
-  
-  cursorSmall.style.left = `${mouseX}px`;
-  cursorSmall.style.top = `${mouseY}px`;
-}
-
-window.addEventListener("mousemove", (e) => {
-  updateCursorPosition(e.clientX, e.clientY);
-  
-  if (!hasMoved) {
-    hasMoved = true;
-  }
-  
-  if (hasMoved && !isVisible) {
-    showCursors();
-  }
-});
-
-function animate() {
-  largeX += (mouseX - largeX) * 0.1;
-  largeY += (mouseY - largeY) * 0.1;
-  cursorLarge.style.left = `${largeX}px`;
-  cursorLarge.style.top = `${largeY}px`;
-  requestAnimationFrame(animate);
-}
-animate();
-
-// More reliable mouse leave detection
-document.addEventListener("mouseleave", (e) => {
-  // Check if mouse actually left the document
-  if (e.clientY <= 0 || e.clientX <= 0 || 
-      e.clientX >= window.innerWidth || 
-      e.clientY >= window.innerHeight) {
-    hideCursors();
-  }
-});
-
-// Mouse enter detection
-document.addEventListener("mouseenter", (e) => {
-  if (hasMoved) {
-    updateCursorPosition(e.clientX, e.clientY);
-    showCursors();
-  }
-});
-
-// Additional fallback for window focus events
-window.addEventListener("focus", () => {
-  if (hasMoved && !isVisible) {
-    showCursors();
-  }
-});
-
-// Visibility API fallback
-document.addEventListener("visibilitychange", () => {
-  if (!document.hidden && hasMoved && !isVisible) {
-    // Small delay to ensure proper state
-    setTimeout(() => {
-      if (!isVisible) {
-        showCursors();
-      }
-    }, 50);
-  }
-});
-
-// Hover effect
-const hoverElements = document.querySelectorAll("[data-cursor-hover]");
-
-hoverElements.forEach((el) => {
-  el.addEventListener("mouseenter", () => {
-    if (isVisible) {
-      cursorLarge.style.opacity = "0";
-      cursorSmall.style.transform = "translate(-50%, -50%) scale(3)";
-    }
-  });
-  el.addEventListener("mouseleave", () => {
-    if (isVisible) {
+      cursorSmall.style.opacity = "1";
       cursorLarge.style.opacity = "1";
-      cursorSmall.style.transform = "translate(-50%, -50%) scale(1)";
+      isVisible = true;
+    }
+  }
+
+  function hideCursors() {
+    if (isVisible) {
+      cursorSmall.style.opacity = "0";
+      cursorLarge.style.opacity = "0";
+      isVisible = false;
+    }
+  }
+
+  function updateCursorPosition(x, y) {
+    mouseX = x;
+    mouseY = y;
+
+    cursorSmall.style.left = `${mouseX}px`;
+    cursorSmall.style.top = `${mouseY}px`;
+  }
+
+  window.addEventListener("mousemove", (e) => {
+    updateCursorPosition(e.clientX, e.clientY);
+
+    if (!hasMoved) {
+      hasMoved = true;
+    }
+
+    if (hasMoved && !isVisible) {
+      showCursors();
     }
   });
-});
 
+  function animate() {
+    largeX += (mouseX - largeX) * 0.1;
+    largeY += (mouseY - largeY) * 0.1;
+    cursorLarge.style.left = `${largeX}px`;
+    cursorLarge.style.top = `${largeY}px`;
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // More reliable mouse leave detection
+  document.addEventListener("mouseleave", (e) => {
+    if (
+      e.clientY <= 0 ||
+      e.clientX <= 0 ||
+      e.clientX >= window.innerWidth ||
+      e.clientY >= window.innerHeight
+    ) {
+      hideCursors();
+    }
+  });
+
+  // Mouse enter detection
+  document.addEventListener("mouseenter", (e) => {
+    if (hasMoved) {
+      updateCursorPosition(e.clientX, e.clientY);
+      showCursors();
+    }
+  });
+
+  // Fallback for regaining focus
+  window.addEventListener("focus", () => {
+    if (hasMoved && !isVisible) {
+      showCursors();
+    }
+  });
+
+  // Visibility change fallback
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden && hasMoved && !isVisible) {
+      setTimeout(() => {
+        if (!isVisible) {
+          showCursors();
+        }
+      }, 50);
+    }
+  });
+
+  // Hover effect
+  const hoverElements = document.querySelectorAll("[data-cursor-hover]");
+
+  hoverElements.forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      if (isVisible) {
+        cursorLarge.style.opacity = "0";
+        cursorSmall.style.transform = "translate(-50%, -50%) scale(3)";
+      }
+    });
+    el.addEventListener("mouseleave", () => {
+      if (isVisible) {
+        cursorLarge.style.opacity = "1";
+        cursorSmall.style.transform = "translate(-50%, -50%) scale(1)";
+      }
+    });
+  });
+} else {
+  // Optionally, hide cursor elements entirely on mobile
+  document.querySelectorAll(".cursor-small, .cursor-large").forEach(el => {
+    el.style.display = "none";
+  });
+}
 document.addEventListener("DOMContentLoaded", () => {
   // Global stuff still runs immediately
   observeReveals(".reveal-wrapper:not(.contact-section .reveal-wrapper)");

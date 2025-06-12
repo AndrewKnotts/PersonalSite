@@ -194,7 +194,7 @@ width: 100%;
     }
 
     .as-landing-heading{
-        font-size: 3rem;
+                font-size: 11vw;
     }
 
 .as-section{
@@ -204,6 +204,14 @@ width: 100%;
 
 .as-section-right{
     width: 100%;
+}
+
+.as-section-right-row{
+  flex-direction: column;
+  gap: 5rem;
+}
+.as-section-right-col{
+  width: 100%;
 }
 
 .as-section-art{
