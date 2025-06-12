@@ -324,25 +324,3 @@ document.getElementById("contact-link-2").addEventListener("click", function (ev
 
 
 
-
-//Loader Overlay
-
-window.addEventListener('load', () => {
-    const loaderOverlay = document.querySelector('.loader-overlay');
-
-    if (!sessionStorage.getItem('intro_shown')) {
-      // Mark it so it doesn't show again this session
-      sessionStorage.setItem('intro_shown', 'true');
-
-      setTimeout(() => {
-        loaderOverlay.classList.add('hide');
-        setTimeout(() => {
-          document.body.style.overflow = 'auto';
-        }, 1000);
-      }, 2000); // delay for animation
-    } else {
-      // Skip animation immediately
-      loaderOverlay.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-  });
