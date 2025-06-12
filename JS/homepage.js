@@ -80,28 +80,83 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-const grid = document.getElementById("pixelGrid");
-const cols = 4,
-  rows = 6;
-const pixels = [];
+// const grid = document.getElementById("pixelGrid");
+// const cols = 4,
+//   rows = 6;
+// const pixels = [];
 
-// Create grid
-for (let i = 0; i < cols * rows; i++) {
-  const pixel = document.createElement("div");
-  pixel.classList.add("pixel");
-  grid.appendChild(pixel);
-  pixels.push(pixel);
+// // Create grid
+// for (let i = 0; i < cols * rows; i++) {
+//   const pixel = document.createElement("div");
+//   pixel.classList.add("pixel");
+//   grid.appendChild(pixel);
+//   pixels.push(pixel);
+// }
+
+// // Default animation loop
+// let index = 0;
+// setInterval(() => {
+//   pixels.forEach((p) => p.classList.remove("on"));
+
+//   // Light up one pixel per frame in sequence
+//   pixels[index].classList.add("on");
+//   index = (index + 1) % pixels.length;
+// }, 500);
+
+const pupils = document.querySelectorAll('.pupil');
+const eyes = document.querySelectorAll('.eye-l, .eye-r');
+
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function updateEyes() {
+  eyes.forEach((eye, i) => {
+    const pupil = pupils[i];
+    const rect = eye.getBoundingClientRect();
+
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const dx = mouseX - centerX;
+    const dy = mouseY - centerY;
+
+    const angle = Math.atan2(dy, dx);
+    const maxDist = rect.width * 0.2;
+
+    const targetX = Math.cos(angle) * maxDist;
+    const targetY = Math.sin(angle) * maxDist;
+
+    // Smooth transition using lerping
+    const currentTransform = pupil.style.transform.match(/translate\(([-0-9.]+)px, ([-0-9.]+)px\)/);
+    let currentX = 0, currentY = 0;
+    if (currentTransform) {
+      currentX = parseFloat(currentTransform[1]);
+      currentY = parseFloat(currentTransform[2]);
+    }
+
+    const lerp = (start, end, amt) => start + (end - start) * amt;
+
+    const newX = lerp(currentX, targetX, 0.1);
+    const newY = lerp(currentY, targetY, 0.1);
+
+    pupil.style.transform = `translate(${newX}px, ${newY}px)`;
+  });
+
+  requestAnimationFrame(updateEyes);
 }
 
-// Default animation loop
-let index = 0;
-setInterval(() => {
-  pixels.forEach((p) => p.classList.remove("on"));
+updateEyes();
 
-  // Light up one pixel per frame in sequence
-  pixels[index].classList.add("on");
-  index = (index + 1) % pixels.length;
-}, 500);
+
+
+
+
+
 
 
 

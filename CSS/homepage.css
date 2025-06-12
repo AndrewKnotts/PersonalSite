@@ -271,6 +271,67 @@ padding-left: 25%;
   transition: background-color 0.5s ease;
 }
 
+/*////////////////*/
+/* Pixel Section */
+/*////////////////*/
+
+.home-circle-container {
+  width: calc(25% - 2rem);
+  padding: 2rem;
+  position: relative;
+}
+
+.home-circle {
+  padding-top: 100%; /* Makes it a square based on width */
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-circle-eyes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  transform: translate(-50%, -50%);
+}
+
+.eye-l, .eye-r {
+  width: 45%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.eye-l::before, .eye-r::before {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  top: 30%;
+  left: 30%;
+  transition: all 0.05s linear;
+}
+
+.pupil {
+  width: 40%;
+  height: 40%;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transition: transform 0.05s linear;
+}
+
 
 
 @media (max-width: 860px) {
