@@ -255,14 +255,15 @@ padding-left: 25%;
 }
 
 .pixel {
-  background-color: #222;
+  background-color: #292929;
   border-radius: 0px;
-  transition: background-color .3s ease;
+  
+  transition: background-color .5s ease-out;
 }
 
 .pixel.on {
   background-color: rgb(255, 255, 255);
-  transition: background-color .3s ease;
+  
 }
 
 .pixel:hover {
@@ -273,6 +274,18 @@ padding-left: 25%;
 
 
 @media (max-width: 860px) {
+
+  .home-big-name{
+    width: 100%;
+  }
+
+  .grid-container{
+    display: none;
+  }
+
+  .landing-section{
+    height: unset;
+  }
 
   .sp-title{
     font-size: 15vw;
@@ -293,6 +306,7 @@ padding-left: 25%;
 .landing-row{
   flex-direction: column;
   gap: 2rem;
+  margin-top: 5rem;
 }
 
 .landing-about{
