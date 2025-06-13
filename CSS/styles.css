@@ -825,10 +825,7 @@ svg {
     margin: 0rem 1rem;
   }
 
-  .cursor-small,
-  .cursor-large {
-    display: none; /* completely hidden at start */
-  }
+
   .sp-row {
     flex-direction: column;
     gap: 3rem;

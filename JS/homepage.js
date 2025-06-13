@@ -44,9 +44,10 @@
 //     }
 //Scrolling Behaviors
 
-
 const nameFast = document.getElementById("name-move-down");
 const nameSlow = document.getElementById("name-move-down-slow");
+const circleFast = document.getElementById("circle-move-down");
+const circleSlow = document.getElementById("circle-move-down-slow");
 
 let lastKnownScrollY = 0;
 let ticking = false;
@@ -55,17 +56,34 @@ window.addEventListener("scroll", () => {
   lastKnownScrollY = window.scrollY;
   if (!ticking) {
     window.requestAnimationFrame(() => {
-      nameFast.style.transform = `translateY(${lastKnownScrollY * 0.5}px)`;
-      nameFast.style.opacity = `${(1000 - lastKnownScrollY) / 4000}`;
+      const y = lastKnownScrollY;
 
-      nameSlow.style.transform = `translateY(${lastKnownScrollY * 0.25}px)`;
-      nameSlow.style.opacity = `${(1000 - lastKnownScrollY) / 2000}`;
+      // Fast elements
+      if (nameFast) {
+        nameFast.style.transform = `translateY(${y * 0.5}px)`;
+        nameFast.style.opacity = `${(1000 - y) / 4000}`;
+      }
+      if (circleFast) {
+        circleFast.style.transform = `translateY(${y * 0.5}px)`;
+        circleFast.style.opacity = `${(1000 - y) / 4000}`;
+      }
+
+      // Slow elements
+      if (nameSlow) {
+        nameSlow.style.transform = `translateY(${y * 0.25}px)`;
+        nameSlow.style.opacity = `${(1000 - y) / 2000}`;
+      }
+      if (circleSlow) {
+        circleSlow.style.transform = `translateY(${y * 0.25}px)`;
+        circleSlow.style.opacity = `${(1000 - y) / 2000}`;
+      }
 
       ticking = false;
     });
     ticking = true;
   }
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const scrollButton = document.getElementById("scroll-to-projects");

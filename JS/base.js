@@ -151,11 +151,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
 // Detect touch devices (mobile & tablet)
-const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
-if (!isTouchDevice) {
+if (window.innerWidth >= 800) {
   const cursorSmall = document.querySelector(".cursor-small");
   const cursorLarge = document.querySelector(".cursor-large");
 
@@ -221,12 +220,7 @@ if (!isTouchDevice) {
 
   // More reliable mouse leave detection
   document.addEventListener("mouseleave", (e) => {
-    if (
-      e.clientY <= 0 ||
-      e.clientX <= 0 ||
-      e.clientX >= window.innerWidth ||
-      e.clientY >= window.innerHeight
-    ) {
+    if (e.clientY <= 0 || e.clientX <= 0 || e.clientX >= window.innerWidth || e.clientY >= window.innerHeight) {
       hideCursors();
     }
   });
@@ -276,7 +270,7 @@ if (!isTouchDevice) {
   });
 } else {
   // Optionally, hide cursor elements entirely on mobile
-  document.querySelectorAll(".cursor-small, .cursor-large").forEach(el => {
+  document.querySelectorAll(".cursor-small, .cursor-large").forEach((el) => {
     el.style.display = "none";
   });
 }
@@ -327,10 +321,6 @@ document.getElementById("contact-link-2").addEventListener("click", function (ev
   const contactSection = document.getElementById("contact-section");
   if (contactSection) {
     contactSection.scrollIntoView({ behavior: "smooth" });
-     hamburgerBtn.click();
+    hamburgerBtn.click();
   }
 });
-
-
-
-

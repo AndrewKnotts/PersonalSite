@@ -1,6 +1,3 @@
-
-
-
 /*////////////////*/
 /* Landing Section */
 /*////////////////*/
@@ -15,8 +12,12 @@
   justify-content: space-between;
 }
 
-.landing-header{
+.landing-header {
   display: flex;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  position: relative;
 }
 
 .home-big-name {
@@ -30,15 +31,14 @@
   pointer-events: none;
   position: relative;
   /* margin: 2rem 0rem; */
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
 }
 
 .home-big-name-solid {
-top: 0;
-left: 0;
-width: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
-
 
 .home-big-name-outline {
   position: absolute;
@@ -47,41 +47,34 @@ width: 100%;
   left: 0;
   width: 100%;
   transition: top 0.4s ease;
-  
-
 }
 
-
-.landing-row{
-width: 100%;
-display: flex;
-flex-direction: row;
-margin-bottom: 6rem;
-margin-top: 1rem;
-
+.landing-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 6rem;
+  margin-top: 1rem;
 }
 
-.landing-about{
-width: 50%;
-white-space: nowrap;
-cursor: default;
-    line-height: 1.5rem;
+.landing-about {
+  width: 50%;
+  white-space: nowrap;
+  cursor: default;
+  line-height: 1.5rem;
 }
 
-.landing-about-text{
+.landing-about-text {
   width: 50%;
 }
 
 .landing-scroll-button {
-width: 50%;
+  width: 50%;
 }
-
-
 
 /*////////////////*/
 /* Portfolio Section */
 /*////////////////*/
-
 
 .sp-section {
   max-width: 1440px;
@@ -90,19 +83,19 @@ width: 50%;
 }
 
 .sp-header {
-font-size: 4rem;
-overflow: hidden;
-pointer-events: none;
+  font-size: 4rem;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-.sp-title{
+.sp-title {
   font-weight: 300;
   opacity: 1;
- font-family: "Major Mono Display", monospace;
+  font-family: "Major Mono Display", monospace;
   /* font-family: "Doto", sans-serif; */
 }
 
-.sp-row{
+.sp-row {
   display: flex;
   flex-direction: row;
   margin: 3rem 0rem;
@@ -113,18 +106,18 @@ pointer-events: none;
 }
 
 .sp-card-large {
-width: 55%;
+  width: 55%;
 }
 
 .sp-card-small {
-width: 45%;
+  width: 45%;
 }
 
 .sp-card-image-container {
   overflow: hidden;
   display: inline-block;
-  width: 100%; 
-  margin-bottom: .5rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 .sp-card-image {
@@ -135,34 +128,31 @@ width: 45%;
   height: auto;
 }
 
-
-
 .sp-card-image:hover {
   transform: scale(1.05); /* Slight zoom in */
 }
 
-.sp-caption{
+.sp-caption {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-pointer-events: none;
-    padding: 0rem 0rem;
-
+  pointer-events: none;
+  padding: 0rem 0rem;
 }
 
 .sp-caption-left,
 .sp-caption-right {
   text-decoration: none;
   color: inherit;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
-.sp-caption-right{
+.sp-caption-right {
   font-weight: 200;
-  opacity: .8;
+  opacity: 0.8;
 }
 
-.projects-button{
+.projects-button {
   width: 50%;
   margin-top: -2rem;
 }
@@ -171,43 +161,40 @@ pointer-events: none;
 /* About Section */
 /*////////////////*/
 
-
 .about-section {
   max-width: 1440px;
   width: 100%;
   padding: 10rem 0rem;
 }
 
-.about-row{
+.about-row {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-.about-title{
+.about-title {
   width: 25%;
-pointer-events: none;
-    display: flex;
-    gap: .5rem;
-
+  pointer-events: none;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .about-desc {
   width: 75%;
   font-weight: 300;
-pointer-events: none;
-
+  pointer-events: none;
 }
 
-.about-desc-text{
+.about-desc-text {
   font-size: 3vw;
   /* font-family: "Major Mono Display", monospace; */
   font-weight: 200;
 }
 
-.about-button{
-margin-top: 5rem;
-padding-left: 25%;
+.about-button {
+  margin-top: 5rem;
+  padding-left: 25%;
 }
 
 /* about text */
@@ -224,17 +211,16 @@ padding-left: 25%;
 }
 
 .about-icon {
- height: 1em;
- vertical-align: middle;
+  height: 1em;
+  vertical-align: middle;
   display: inline-block;
   width: auto;
 }
 
-
 /*////////////////*/
 /* Pixel Section */
 /*////////////////*/
-.grid-container{
+.grid-container {
   width: 25%;
   display: flex;
   justify-content: center;
@@ -257,13 +243,12 @@ padding-left: 25%;
 .pixel {
   background-color: #292929;
   border-radius: 0px;
-  
-  transition: background-color .5s ease-out;
+
+  transition: background-color 0.5s ease-out;
 }
 
 .pixel.on {
   background-color: rgb(255, 255, 255);
-  
 }
 
 .pixel:hover {
@@ -276,9 +261,18 @@ padding-left: 25%;
 /*////////////////*/
 
 .home-circle-container {
-  width: calc(25% - 2rem);
-  padding: 2rem;
+  width: calc(25%);
+  padding: 2vw;
   position: relative;
+  z-index: 5;
+}
+
+.home-circle-under{
+  padding-top: 100%; /* Makes it a square based on width */
+  background-color: rgb(255, 0, 0);
+  border-radius: 50%;
+  position: absolute;
+  overflow: hidden;
 }
 
 .home-circle {
@@ -287,21 +281,33 @@ padding-left: 25%;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.home-circle:hover{
+  opacity: .9;
+  cursor: pointer;
+}
+
+.home-circle:active .pupil {
+  background-color: transparent;
+  color: black;
 }
 
 .home-circle-eyes {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 60%;
-  height: 30%;
-  display: flex;
-  justify-content: space-between;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translate(-50%, -50%);
 }
 
-.eye-l, .eye-r {
-  width: 45%;
+.eye-l,
+.eye-r {
+  width: 50%;
   height: 100%;
   background-color: #ffffff;
   border-radius: 50%;
@@ -309,8 +315,9 @@ padding-left: 25%;
   position: relative;
 }
 
-.eye-l::before, .eye-r::before {
-  content: '';
+.eye-l::before,
+.eye-r::before {
+  content: "";
   position: absolute;
   width: 40%;
   height: 40%;
@@ -322,81 +329,106 @@ padding-left: 25%;
 }
 
 .pupil {
-  width: 40%;
-  height: 40%;
-  background-color: black;
-  border-radius: 50%;
-  position: absolute;
-  top: 30%;
-  left: 30%;
-  transition: transform 0.05s linear;
+    width: 40%;
+    height: 40%;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    color: transparent;
+    font-size: 5vw;
+    left: 30%;
+    transition: transform 0.05s linear;
+    pointer-events: none;
+  
 }
 
+.circle-under-container{
+      width: calc(25% - 0vw);
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    
+    border-radius: 50%;
+    /* height: 200px; */
+    left: 75%;
+    padding: 2vw;
+}
 
+.circle-under{
+  
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    /* background-color: red; */
+    border: 3px solid #ffffff;
+    box-sizing: border-box;
+}
 
 @media (max-width: 860px) {
 
-  .home-big-name{
+  .landing-header{
+    flex-direction: column-reverse;
+  }
+  .home-big-name {
     width: 100%;
   }
 
-  .grid-container{
+  .grid-container {
     display: none;
   }
 
-  .landing-section{
+  .landing-section {
     height: unset;
   }
 
-  .sp-title{
+  .sp-title {
     font-size: 15vw;
   }
-.sp-row{
-  flex-direction: column;
-  gap: 3rem;
-}
+  .sp-row {
+    flex-direction: column;
+    gap: 3rem;
+  }
 
-.sp-card-large{
-  width: 100%;
-}
+  .sp-card-large {
+    width: 100%;
+  }
 
-.sp-card-small{
-  width: 100%;
-}
+  .sp-card-small {
+    width: 100%;
+  }
 
-.landing-row{
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 5rem;
-}
+  .landing-row {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 5rem;
+  }
 
-.landing-about{
-          font-size: 3.8vw;
-          line-height: unset;
-}
+  .landing-about {
+    font-size: 3.8vw;
+    line-height: unset;
+  }
 
-.about-button{
-  padding-left: 0;
-}
+  .about-button {
+    padding-left: 0;
+  }
 
-
-
-.about-row{
-  flex-direction: column;
-  gap: 2rem;
+  .about-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .about-desc {
+    width: 100%;
+  }
+  .about-desc-text {
+    font-size: 1.8rem;
+  }
 }
-.about-desc{
-  width: 100%;
-}
-.about-desc-text{
-font-size: 1.8rem;
-}
-}
-
 
 @media (min-width: 1440px) {
-.about-desc-text{
-    font-size: 2.8rem
-
-}
+  .about-desc-text {
+    font-size: 2.8rem;
+  }
 }
