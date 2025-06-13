@@ -369,6 +369,10 @@
 
 @media (max-width: 860px) {
 
+  .circle-under-container{
+    display: none;
+  }
+
   .landing-header{
     flex-direction: column-reverse;
   }
