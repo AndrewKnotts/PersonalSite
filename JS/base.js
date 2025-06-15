@@ -331,7 +331,7 @@ document.getElementById("contact-link-2").addEventListener("click", function (ev
 
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) {
-      document.title = "Nooo come back";
+      document.title = "Where to next?";
     } else {
       document.title = originalTitle;
     }
