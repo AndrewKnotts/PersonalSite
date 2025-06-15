@@ -89,6 +89,10 @@
   max-width: 1440px;
 }
 
+.project-text-section ul{
+  padding-left: 2rem;
+}
+
 .project-text-title {
   width: 50%;
   font-size: 5vw;
@@ -109,6 +113,16 @@
   line-height: 1.8rem;
   font-weight: 200;
   padding: 0rem 1rem;
+  
+}
+
+
+.project-text-paragraph li{
+  padding-bottom: 1rem;
+}
+
+.project-text-paragraph p{
+  padding-bottom: 1rem;
 }
 
 .project-image-section {
@@ -138,6 +152,10 @@
   gap: 0.5rem;
   padding-top: 2rem;
   color: rgb(223, 188, 255);
+}
+
+.link-under{
+  padding-top: 0;
 }
 
 .project-page-link:hover {

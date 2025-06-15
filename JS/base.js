@@ -324,3 +324,15 @@ document.getElementById("contact-link-2").addEventListener("click", function (ev
     hamburgerBtn.click();
   }
 });
+
+
+
+  const originalTitle = document.title;
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      document.title = "nooo come back 😢";
+    } else {
+      document.title = originalTitle;
+    }
+  });
