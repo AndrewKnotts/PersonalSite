@@ -336,3 +336,5 @@ document.getElementById("contact-link-2").addEventListener("click", function (ev
       document.title = originalTitle;
     }
   });
+
+console.log("%cHey! What are you doing in here? 👀\nIf you're that curious, reach out to me at knottsan2010@gmail.com.", "color: blue; font-size: 20px;");
