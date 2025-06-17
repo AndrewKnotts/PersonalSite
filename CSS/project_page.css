@@ -180,7 +180,7 @@
 
 .inactive{
   pointer-events: none;
-  opacity: .5;
+  opacity: .3;
 }
 
 .next-button::after {
