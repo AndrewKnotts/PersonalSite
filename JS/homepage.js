@@ -84,7 +84,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const scrollButton = document.getElementById("scroll-to-projects");
   const targetSection = document.getElementById("projects-section");
@@ -95,8 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-
 
 // const grid = document.getElementById("pixelGrid");
 // const cols = 4,
@@ -121,13 +118,13 @@ document.addEventListener("DOMContentLoaded", () => {
 //   index = (index + 1) % pixels.length;
 // }, 500);
 
-const pupils = document.querySelectorAll('.pupil');
-const eyes = document.querySelectorAll('.eye-l, .eye-r');
+const pupils = document.querySelectorAll(".pupil");
+const eyes = document.querySelectorAll(".eye-l, .eye-r");
 
 let mouseX = 0;
 let mouseY = 0;
 
-document.addEventListener('mousemove', (e) => {
+document.addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 });
@@ -151,7 +148,8 @@ function updateEyes() {
 
     // Smooth transition using lerping
     const currentTransform = pupil.style.transform.match(/translate\(([-0-9.]+)px, ([-0-9.]+)px\)/);
-    let currentX = 0, currentY = 0;
+    let currentX = 0,
+      currentY = 0;
     if (currentTransform) {
       currentX = parseFloat(currentTransform[1]);
       currentY = parseFloat(currentTransform[2]);
@@ -170,58 +168,48 @@ function updateEyes() {
 
 updateEyes();
 
-
-
-
-
-
-
-
-
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const lines = entry.target.querySelectorAll('.about-desc-text');
+          const lines = entry.target.querySelectorAll(".about-desc-text");
           lines.forEach((line, index) => {
             setTimeout(() => {
-              line.classList.add('visible');
+              line.classList.add("visible");
             }, index * 200); // Adjust delay as needed
           });
           observer.unobserve(entry.target); // Remove if you want the animation to happen only once
         }
       });
-    }, { threshold: 0.5 });
+    },
+    { threshold: 0.5 },
+  );
 
-    const section = document.querySelector('.about-desc');
-    if (section) {
-      observer.observe(section);
-    }
-  });
-
-
-
-
+  const section = document.querySelector(".about-desc");
+  if (section) {
+    observer.observe(section);
+  }
+});
 
 //Loader Overlay
 
-window.addEventListener('load', () => {
-    const loaderOverlay = document.querySelector('.loader-overlay');
+window.addEventListener("load", () => {
+  const loaderOverlay = document.querySelector(".loader-overlay");
 
-    if (!sessionStorage.getItem('intro_shown')) {
-      // Mark it so it doesn't show again this session
-      sessionStorage.setItem('intro_shown', 'true');
+  if (!sessionStorage.getItem("intro_shown")) {
+    // Mark it so it doesn't show again this session
+    sessionStorage.setItem("intro_shown", "true");
 
+    setTimeout(() => {
+      loaderOverlay.classList.add("hide");
       setTimeout(() => {
-        loaderOverlay.classList.add('hide');
-        setTimeout(() => {
-          document.body.style.overflow = 'auto';
-        }, 1000);
-      }, 2000); // delay for animation
-    } else {
-      // Skip animation immediately
-      loaderOverlay.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-  });
+        document.body.style.overflow = "auto";
+      }, 500);
+    }, 1000); // delay for animation
+  } else {
+    // Skip animation immediately
+    loaderOverlay.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+});
